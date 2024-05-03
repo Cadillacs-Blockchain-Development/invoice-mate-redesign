@@ -1,112 +1,181 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import heroArrow from "@/public/home/hero_arrow.svg";
+import placeholder from "@/public/placeholder.svg";
+import delloitLogo from "@/public/home/delloit_logo.svg";
+import award from "@/public/icons/award.svg";
+import heroImg from "@/public/home/hero_image.svg";
+
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { backers } from "@/constants/partners/backers";
+import { accordianData } from "@/constants/accordianData";
+import DecentralizedInfrastructureSections from "@/components/home/DecentralizedInfrastructureSections";
+import HighlightedHeading from "@/components/home/HighlightedHeading";
+
+const Badge = ({
+  icon,
+  title,
+  subTitle,
+}: {
+  icon?: StaticImageData;
+  title: string;
+  subTitle?: string;
+}) => {
+  return (
+    <div className="bg-[#FCB645] w-fit rounded-2xl mx-auto flex gap-6 items-center px-4 py-3">
+      <div>
+        <Image src={award} alt="award" />
+      </div>
+      <div className={cn("flex flex-col gap-4", icon && "mr-[90px]")}>
+        {icon && (
+          <Image src={icon} alt="delloit Logo" className="object-[1px_0]" />
+        )}
+        <span className="text-[#9E2654] text-xl font-bold">{title}</span>
+        {subTitle && (
+          <span className="text-black text-base font-bold">{subTitle}</span>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const HeroPrimary = () => {
+  return (
+    <div className=" max-w-[1440px] mx-auto relative z-50">
+      <div className="bg-[#9E2654] w-full h-[1066px] absolute top-0 blur-[150px] rounded-[1355px] z-[10]"></div>
+      <div className="bg-[#5A2C66] w-[521px] h-[562px] absolute top-10  right-0 blur-[220px] rounded-[1355px] z-50"></div>
+      <div className="pt-[176px] w-1/2 mx-auto text-center text-white font-bold text-[72px] relative z-50">
+        Future of Invoicing: Tokenizing Invoices as RWAs
+      </div>
+      <p className="w-1/2 mx-auto text-center text-white text-2xl font-normal mt-6 leading-[36px] tracking-[-2%] relative z-50">
+        Access Yield Generating Invoices as RWAs for Secure and low volatile
+        Yields
+      </p>
+      <div className="relative w-fit mx-auto z-50 ">
+        <Image
+          src={heroArrow}
+          alt="arrow"
+          className="top-[-110%]  left-[-90%] absolute"
+        />
+        <div className="flex justify-center mt-12">
+          <Button className="bg-[#040815] rounded-full font-semibold text-base active:scale-[0.97] transition ">
+            App coming soon
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const HeroSecondary = () => {
+  return (
+    <div className="relative max-w-[1440px] mx-auto ">
+      <div className="bg-[#5A2C66] w-[521px] h-[562px] absolute top-10 -left-[10%] blur-[180px] rounded-[1355px] z-[10] opacity-70"></div>
+      <div className=" max-w-[1440px] mx-auto relative z-50 pb-24 mt-14">
+        <Badge icon={delloitLogo} title="Rising Star Winner" />
+        <div className="relative">
+          <div className="absolute left-[12%] top-[28%]">
+            <Badge
+              title="Best Invoice Financing Solution 2024"
+              subTitle="MEA Awards"
+            />
+          </div>
+          <div className="absolute right-[11%] top-[35.5%]">
+            <Badge title="Best Blockchain Startup" subTitle="GB Tech Awards" />
+          </div>
+          <Image src={heroImg} alt="hero Img" className="mx-auto" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const StatsSection = () => {
+  return (
+    <div className="bg-white rounded-t-2xl pt-8 px-[120px]">
+      <div className="relative max-w-[1440px] mx-auto">
+        <div className="w-full flex justify-between items-center">
+          <div className="flex flex-col items-center justify-between">
+            <span className="text-[#58142D] text-[32px] font-bold ">
+              $201,983,748
+            </span>
+            <span className="text-[#58142D] text-base font-medium">
+              Assets Tokenized
+            </span>
+          </div>
+          <div className="flex flex-col items-center justify-between">
+            <span className="text-[#58142D] text-[32px] font-bold ">
+              $6,192,129
+            </span>
+            <span className="text-[#58142D] text-base font-medium ">
+              Assets Financed
+            </span>
+          </div>
+          <div className="flex flex-col items-center justify-between">
+            <span className="text-[#58142D] text-[32px] font-bold ">$0</span>
+            <span className="text-[#58142D] text-base font-medium ">
+              Bad Debts
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Backers = () => {
+  return (
+    <div className="mt-24 max-w-[1440px] mx-auto">
+      <div className="uppercase text-center text-[#667085] font-semibold text-xl">
+        Our Backers
+      </div>
+      <div className="flex justify-center gap-8 mt-8">
+        {backers.map((item, i) => (
+          <Image src={item} alt="backer" key={i} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const VideoSection = () => {
+  return (
+    <div className="bg-[#F9FAFC]">
+      <div className="mt-24  max-w-[1440px] mx-auto px-[120px] py-[112px]">
+        <div className="bg-video-background-gradient flex justify-center items-center pt-[18px] rounded-2xl">
+          <Image src={placeholder} alt="placeholder" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DecentralizedMoneySection = () => {
+  return (
+    <div className="mt-24 max-w-[1440px] mx-auto">
+      <div className="flex justify-center items-center">
+        <div className="w-1/3 text-center">
+          <HighlightedHeading
+            heading="Decentralized Money Marketplace for RWAs"
+            vectorPos={{ right: "-8" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+    <main className="bg-[#55122B]">
+      <HeroPrimary />
+      <HeroSecondary />
+      <div className="bg-white">
+        <StatsSection />
+        <Backers />
+        <VideoSection />
+        <DecentralizedInfrastructureSections />
+        <DecentralizedMoneySection />
       </div>
     </main>
   );
