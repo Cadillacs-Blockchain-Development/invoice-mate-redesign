@@ -14,7 +14,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1440px",
       },
     },
     extend: {
@@ -76,7 +76,11 @@ const config = {
       backgroundImage: {
         "video-background-gradient":
           "linear-gradient(180deg, #9E2654 0%, #380D1E 100%)",
+        "borrow-card-gradient": "linear-gradient(180deg, #9E2654 0%, #6A2841 100%)"
       },
+      boxShadow: {
+        "button-priamry": "0px 12px 30px 0px rgba(201, 45, 103, 0.4)"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

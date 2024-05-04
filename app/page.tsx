@@ -11,6 +11,13 @@ import { backers } from "@/constants/partners/backers";
 import { accordianData } from "@/constants/accordianData";
 import DecentralizedInfrastructureSections from "@/components/home/DecentralizedInfrastructureSections";
 import HighlightedHeading from "@/components/home/HighlightedHeading";
+import { decentralizedMoneyCardsData } from "@/constants/decentralizedMoneyCards";
+import DecentralizedMoneyCard from "@/components/home/DecentralizedMoneyCard";
+import { requestToBorrowCardsData } from "@/constants/requestToBorrowCardsData";
+import { inter } from "@/utils/fonts";
+import RequestForm from "@/components/home/RequestForm";
+import PartnersComponent from "@/components/home/PartnersComponent";
+import { partners } from "@/constants/partners/partners";
 
 const Badge = ({
   icon,
@@ -22,7 +29,7 @@ const Badge = ({
   subTitle?: string;
 }) => {
   return (
-    <div className="bg-[#FCB645] w-fit rounded-2xl mx-auto flex gap-6 items-center px-4 py-3">
+    <div className="mx-auto flex w-fit items-center gap-6 rounded-2xl bg-[#FCB645] px-4 py-3">
       <div>
         <Image src={award} alt="award" />
       </div>
@@ -30,9 +37,9 @@ const Badge = ({
         {icon && (
           <Image src={icon} alt="delloit Logo" className="object-[1px_0]" />
         )}
-        <span className="text-[#9E2654] text-xl font-bold">{title}</span>
+        <span className="text-xl font-bold text-[#9E2654]">{title}</span>
         {subTitle && (
-          <span className="text-black text-base font-bold">{subTitle}</span>
+          <span className="text-base font-bold text-black">{subTitle}</span>
         )}
       </div>
     </div>
@@ -41,24 +48,24 @@ const Badge = ({
 
 const HeroPrimary = () => {
   return (
-    <div className=" max-w-[1440px] mx-auto relative z-50">
-      <div className="bg-[#9E2654] w-full h-[1066px] absolute top-0 blur-[150px] rounded-[1355px] z-[10]"></div>
-      <div className="bg-[#5A2C66] w-[521px] h-[562px] absolute top-10  right-0 blur-[220px] rounded-[1355px] z-50"></div>
-      <div className="pt-[176px] w-1/2 mx-auto text-center text-white font-bold text-[72px] relative z-50">
+    <div className=" relative z-50 mx-auto max-w-[1440px]">
+      <div className="absolute top-0 z-[10] h-[1066px] w-full rounded-[1355px] bg-[#9E2654] blur-[150px]"></div>
+      <div className="absolute right-0 top-10 z-50 h-[562px]  w-[521px] rounded-[1355px] bg-[#5A2C66] blur-[220px]"></div>
+      <div className="relative z-50 mx-auto w-1/2 pt-[176px] text-center text-[72px] font-bold text-white">
         Future of Invoicing: Tokenizing Invoices as RWAs
       </div>
-      <p className="w-1/2 mx-auto text-center text-white text-2xl font-normal mt-6 leading-[36px] tracking-[-2%] relative z-50">
+      <p className="relative z-50 mx-auto mt-6 w-1/2 text-center text-2xl font-normal leading-[36px] tracking-[-2%] text-white">
         Access Yield Generating Invoices as RWAs for Secure and low volatile
         Yields
       </p>
-      <div className="relative w-fit mx-auto z-50 ">
+      <div className="relative z-50 mx-auto w-fit ">
         <Image
           src={heroArrow}
           alt="arrow"
-          className="top-[-110%]  left-[-90%] absolute"
+          className="absolute  left-[-90%] top-[-110%]"
         />
-        <div className="flex justify-center mt-12">
-          <Button className="bg-[#040815] rounded-full font-semibold text-base active:scale-[0.97] transition ">
+        <div className="mt-12 flex justify-center">
+          <Button className="rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97] ">
             App coming soon
           </Button>
         </div>
@@ -69,9 +76,9 @@ const HeroPrimary = () => {
 
 const HeroSecondary = () => {
   return (
-    <div className="relative max-w-[1440px] mx-auto ">
-      <div className="bg-[#5A2C66] w-[521px] h-[562px] absolute top-10 -left-[10%] blur-[180px] rounded-[1355px] z-[10] opacity-70"></div>
-      <div className=" max-w-[1440px] mx-auto relative z-50 pb-24 mt-14">
+    <div className="relative mx-auto max-w-[1440px] ">
+      <div className="absolute -left-[10%] top-10 z-[10] h-[562px] w-[521px] rounded-[1355px] bg-[#5A2C66] opacity-70 blur-[180px]"></div>
+      <div className=" relative z-50 mx-auto mt-14 max-w-[1440px] pb-24">
         <Badge icon={delloitLogo} title="Rising Star Winner" />
         <div className="relative">
           <div className="absolute left-[12%] top-[28%]">
@@ -92,28 +99,28 @@ const HeroSecondary = () => {
 
 const StatsSection = () => {
   return (
-    <div className="bg-white rounded-t-2xl pt-8 px-[120px]">
-      <div className="relative max-w-[1440px] mx-auto">
-        <div className="w-full flex justify-between items-center">
+    <div className="rounded-t-2xl bg-white px-[120px] pt-8">
+      <div className="relative mx-auto max-w-[1440px]">
+        <div className="flex w-full items-center justify-between">
           <div className="flex flex-col items-center justify-between">
-            <span className="text-[#58142D] text-[32px] font-bold ">
+            <span className="text-[32px] font-bold text-[#58142D] ">
               $201,983,748
             </span>
-            <span className="text-[#58142D] text-base font-medium">
+            <span className="text-base font-medium text-[#58142D]">
               Assets Tokenized
             </span>
           </div>
           <div className="flex flex-col items-center justify-between">
-            <span className="text-[#58142D] text-[32px] font-bold ">
+            <span className="text-[32px] font-bold text-[#58142D] ">
               $6,192,129
             </span>
-            <span className="text-[#58142D] text-base font-medium ">
+            <span className="text-base font-medium text-[#58142D] ">
               Assets Financed
             </span>
           </div>
           <div className="flex flex-col items-center justify-between">
-            <span className="text-[#58142D] text-[32px] font-bold ">$0</span>
-            <span className="text-[#58142D] text-base font-medium ">
+            <span className="text-[32px] font-bold text-[#58142D] ">$0</span>
+            <span className="text-base font-medium text-[#58142D] ">
               Bad Debts
             </span>
           </div>
@@ -125,11 +132,11 @@ const StatsSection = () => {
 
 const Backers = () => {
   return (
-    <div className="mt-24 max-w-[1440px] mx-auto">
-      <div className="uppercase text-center text-[#667085] font-semibold text-xl">
+    <div className="mx-auto mt-24 max-w-[1440px]">
+      <div className="text-center text-xl font-semibold uppercase text-[#667085]">
         Our Backers
       </div>
-      <div className="flex justify-center gap-8 mt-8">
+      <div className="mt-8 flex justify-center gap-8">
         {backers.map((item, i) => (
           <Image src={item} alt="backer" key={i} />
         ))}
@@ -141,8 +148,8 @@ const Backers = () => {
 const VideoSection = () => {
   return (
     <div className="bg-[#F9FAFC]">
-      <div className="mt-24  max-w-[1440px] mx-auto px-[120px] py-[112px]">
-        <div className="bg-video-background-gradient flex justify-center items-center pt-[18px] rounded-2xl">
+      <div className="mx-auto  mt-24 max-w-[1440px] px-[120px] py-[112px]">
+        <div className="flex items-center justify-center rounded-2xl bg-video-background-gradient pt-[18px]">
           <Image src={placeholder} alt="placeholder" />
         </div>
       </div>
@@ -152,8 +159,8 @@ const VideoSection = () => {
 
 const DecentralizedMoneySection = () => {
   return (
-    <div className="mt-24 max-w-[1440px] mx-auto">
-      <div className="flex justify-center items-center">
+    <div className="mx-auto mt-24 max-w-[1440px]">
+      <div className="flex items-center justify-center">
         <div className="w-1/3 text-center">
           <HighlightedHeading
             heading="Decentralized Money Marketplace for RWAs"
@@ -161,21 +168,75 @@ const DecentralizedMoneySection = () => {
           />
         </div>
       </div>
+      <div className="mx-[120px] mb-[100px] mt-16 grid grid-cols-2 gap-6">
+        {decentralizedMoneyCardsData.map((card, i) => (
+          <DecentralizedMoneyCard card={card} key={i} />
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <Button className="mt-16 rounded-full bg-[#040815] text-base font-semibold shadow-button-priamry transition active:scale-[0.97]">
+          App coming soon
+        </Button>
+      </div>
     </div>
   );
 };
 
+const RequestToBorrow = () => {
+  return (
+    <div className="mx-auto mt-24 max-w-[1440px]">
+      <div className="mx-auto w-1/2 text-center text-[40px] font-bold">
+        Get access to Working Capital finance to grow your businsess
+      </div>
+      <div className="mt-16 flex gap-11">
+        <div className="grid basis-1/2 grid-cols-2 gap-2">
+          {requestToBorrowCardsData.map((card, i) => (
+            <div
+              key={i}
+              className="flex aspect-square flex-col items-center justify-center rounded-xl bg-borrow-card-gradient  p-6"
+            >
+              <div>
+                <Image src={card.icon} alt={card.title} />
+              </div>
+              <div className="mt-7 text-center text-lg font-bold text-white">
+                {card.title}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className={`${inter.className} flex basis-1/2 flex-col`}>
+          <div className="text=[#101828] text-4xl font-semibold">
+            Request To Borrow
+          </div>
+          <div className="mt-12 h-full">
+            <RequestForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default function Home() {
   return (
-    <main className="bg-[#55122B]">
+    <main className="bg-[#55122B] ">
       <HeroPrimary />
       <HeroSecondary />
-      <div className="bg-white">
+      <div className="bg-white pb-[120px]">
         <StatsSection />
         <Backers />
         <VideoSection />
         <DecentralizedInfrastructureSections />
         <DecentralizedMoneySection />
+        <RequestToBorrow />
+      </div>
+      <div className="bg-[#F9FAFC]">
+        {partners.map((item, i) => (
+          <PartnersComponent
+            title={item.title}
+            partners={item.partners}
+            key={i}
+          />
+        ))}
       </div>
     </main>
   );

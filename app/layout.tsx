@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { pjs } from "@/utils/fonts";
 
-const pjs = Plus_Jakarta_Sans({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "InvoiceMate",
