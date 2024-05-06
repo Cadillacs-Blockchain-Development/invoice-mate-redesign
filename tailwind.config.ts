@@ -76,10 +76,11 @@ const config = {
       backgroundImage: {
         "video-background-gradient":
           "linear-gradient(180deg, #9E2654 0%, #380D1E 100%)",
-        "borrow-card-gradient": "linear-gradient(180deg, #9E2654 0%, #6A2841 100%)"
+        "borrow-card-gradient": "linear-gradient(180deg, #9E2654 0%, #6A2841 100%)",
       },
       boxShadow: {
-        "button-priamry": "0px 12px 30px 0px rgba(201, 45, 103, 0.4)"
+        "button-priamry": "0px 12px 30px 0px rgba(201, 45, 103, 0.4)",
+        "card-shadow": "box-shadow: 0px 4px 6px -2px #10182808 box- shadow: 0px 12px 16px - 4px #10182814"
       }
     },
   },

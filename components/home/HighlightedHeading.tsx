@@ -11,10 +11,10 @@ const HighlightedHeading = ({
   vectorPos?: { top?: string; right?: string };
 }) => {
   return (
-    <div className="text-[#040815] text-[40px] w-fit font-bold relative">
+    <div className="relative w-fit text-[32px] font-bold text-[#040815] sm:text-[40px]">
       {heading}
       <div
-        className={"absolute"}
+        className={"absolute hidden sm:block"}
         style={{
           top: vectorPos?.top ? vectorPos?.top + "%" : "-30%",
           right: vectorPos?.right ? vectorPos?.right + "%" : "-2%",

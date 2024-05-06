@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/public/nav_logo.svg";
 import { Button } from "./ui/button";
+import { MenuIcon } from "lucide-react";
 
 const links = [
   { name: "Land", link: "" },
@@ -10,21 +11,40 @@ const links = [
 ];
 const Navbar = () => {
   return (
-    <div className="bg-transparent absolute z-[999] top-0 w-full flex justify-between p-6">
-      <div>
-        <Image src={logo} alt="logo" width={169} height={32} />
+    <>
+      <div className="absolute top-0 z-[999] hidden w-full justify-between bg-transparent p-6 sm:flex">
+        <div>
+          <Image src={logo} alt="logo" width={169} height={32} />
+        </div>
+        <ul className="flex gap-10 text-lg font-medium text-white">
+          {links.map((link, i) => (
+            <li key={i}>{link.name}</li>
+          ))}
+        </ul>
+        <div>
+          <Button className="rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97]">
+            App coming soon
+          </Button>
+        </div>
       </div>
-      <ul className="flex gap-10 text-white font-medium text-lg">
-        {links.map((link, i) => (
-          <li key={i}>{link.name}</li>
-        ))}
-      </ul>
-      <div>
-        <Button className="bg-[#040815] rounded-full font-semibold text-base active:scale-[0.97] transition">
-          App coming soon
-        </Button>
+      {/* mobile navbar */}
+      <div className="absolute top-0 z-[999] flex w-full items-center justify-between bg-transparent p-6 sm:hidden">
+        <div>
+          <Image src={logo} alt="logo" width={169} height={32} />
+        </div>
+        {/* <ul className="flex gap-10 text-lg font-medium text-white">
+          {links.map((link, i) => (
+            <li key={i}>{link.name}</li>
+          ))}
+        </ul>
+        <div>
+          <Button className="rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97]">
+            App coming soon
+          </Button>
+        </div> */}
+        <MenuIcon color="white" />
       </div>
-    </div>
+    </>
   );
 };
 
