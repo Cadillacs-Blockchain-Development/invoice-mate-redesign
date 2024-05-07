@@ -62,10 +62,16 @@ const DecentralizedInfrastructureSections = () => {
                           className="mb-8 text-base font-bold text-[#040815]"
                         >
                           <span>{(idx + 1).toString()}.</span>
-                          <span>{data.heading}:</span>
-                          <span className="font-normal text-[#596780]">
-                            {data.desc}
-                          </span>
+                          <span>{data.heading}: </span>
+                          <span
+                            className="font-normal text-[#596780]"
+                            dangerouslySetInnerHTML={{
+                              __html: data.desc.replace(
+                                /\*\*(.*?)\*\*/g,
+                                "<strong>$1</strong>",
+                              ),
+                            }}
+                          />
                         </div>
                       ))}
                     </div>

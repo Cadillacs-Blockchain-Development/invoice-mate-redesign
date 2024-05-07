@@ -16,11 +16,11 @@ export const accordianData = [
       },
       {
         heading: "Unparalleled Transparency",
-        desc: "Over $200 million in tokenized invoices ensure complete transparency with immutable timestamping on the blockchain.",
+        desc: "Over **$200 million** in tokenized invoices ensure complete transparency with immutable timestamping on the blockchain.",
       },
       {
         heading: "Trusted Ecosystem",
-        desc: "IMS fosters trust for over 1700 businesses and offers lenders easy access to verifiable invoice data on the blockchain.",
+        desc: "IMS fosters trust for over **1700 businesses** and offers lenders easy access to verifiable invoice data on the blockchain.",
       },
     ],
     icon: accordianIcon_1,
@@ -31,7 +31,7 @@ export const accordianData = [
     data: [
       {
         heading: "Secure & Smart AI",
-        desc: "scans invoices for fraud across 30+ checkpoints using advanced algorithms through AI, safeguarding investors, and liquidity providers.",
+        desc: "scans invoices for fraud across **30+ checkpoints** using advanced algorithms through AI, safeguarding investors, and liquidity providers.",
       },
       {
         heading: "Blockchain-powered Trust",
@@ -69,7 +69,7 @@ export const accordianData = [
     data: [
       {
         heading: "High Yield Potential",
-        desc: "Investors can earn attractive annual yields ranging from 15% APY to 20% APY on their stablecoins.",
+        desc: "Investors can earn attractive annual yields ranging from **15% APY** to **20% APY** on their stablecoins.",
       },
       {
         heading: "Reduced Risk",
