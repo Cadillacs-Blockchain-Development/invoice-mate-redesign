@@ -13,7 +13,7 @@ const DecentralizedMoneyCard = ({ card }: { card: card }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (titleRef.current) {
-      if (window.innerWidth > 980) {
+      if (window.innerWidth > 1280) {
         const titleHeight = titleRef.current.offsetHeight;
         const translateValue = `calc(80% - ${titleHeight}px)`;
         if (containerRef.current) {

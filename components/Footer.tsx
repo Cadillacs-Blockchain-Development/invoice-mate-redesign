@@ -19,7 +19,7 @@ const Footer = () => {
             Unlocking Business Growth and Investment Opportunities.
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-24 ">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 sm:gap-24 ">
           {footerLinks.map((links, i) => (
             <div key={links.heading}>
               <span className="text-xl font-semibold text-[#1A202C]">

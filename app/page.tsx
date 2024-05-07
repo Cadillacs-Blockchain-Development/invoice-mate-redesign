@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { backers } from "@/constants/partners/backers";
 import { accordianData } from "@/constants/accordianData";
 import DecentralizedInfrastructureSections from "@/components/home/DecentralizedInfrastructureSections";
-import HighlightedHeading from "@/components/home/HighlightedHeading";
+import HighlightedHeading from "@/components/common/HighlightedHeading";
 import { decentralizedMoneyCardsData } from "@/constants/decentralizedMoneyCards";
 import DecentralizedMoneyCard from "@/components/home/DecentralizedMoneyCard";
 import { requestToBorrowCardsData } from "@/constants/requestToBorrowCardsData";
@@ -21,6 +21,7 @@ import PartnersComponent from "@/components/home/PartnersComponent";
 import { partners } from "@/constants/partners/partners";
 import Blogs from "@/components/home/Blogs";
 import News from "@/components/home/News";
+import Backers from "@/components/common/Backers";
 
 const Badge = ({
   icon,
@@ -51,13 +52,13 @@ const Badge = ({
 
 const HeroPrimary = () => {
   return (
-    <div className="relative z-50 mx-auto max-w-[1400px] overflow-x-clip px-8 sm:overflow-x-visible lg:px-0">
+    <div className="relative z-50 mx-auto max-w-[1400px] overflow-x-clip px-8 xl:overflow-x-visible xl:px-0">
       <div className="absolute top-0 z-[10] h-[1066px] w-full rounded-[1355px] bg-[#9E2654] blur-[150px]"></div>
       <div className="absolute right-0 top-10 z-50 h-[562px]  w-[521px] rounded-[1355px] bg-[#5A2C66] blur-[220px]"></div>
-      <div className="relative z-50 mx-auto pt-[176px] text-center text-[32px] font-bold text-white sm:text-[72px] lg:w-1/2">
+      <div className="relative z-50 mx-auto pt-[176px] text-center text-[32px] font-bold text-white sm:text-[72px] xl:w-1/2">
         Future of Invoicing: Tokenizing Invoices as RWAs
       </div>
-      <p className="relative z-50 mx-auto mt-6 text-center text-2xl font-normal leading-[36px] tracking-[-2%] text-white lg:w-1/2 lg:px-0">
+      <p className="relative z-50 mx-auto mt-6 text-center text-2xl font-normal leading-[36px] tracking-[-2%] text-white xl:w-1/2 xl:px-0">
         Access Yield Generating Invoices as RWAs for Secure and low volatile
         Yields
       </p>
@@ -93,13 +94,13 @@ const HeroSecondary = () => {
           <Badge title="Best Blockchain Startup" subTitle="GB Tech Awards" />
         </div>
         <div className="relative">
-          <div className="absolute left-[8%] top-[18%] hidden sm:block  lg:left-[12%] lg:top-[28%]">
+          <div className="absolute left-[8%] top-[18%] hidden sm:block  xl:left-[12%] xl:top-[28%]">
             <Badge
               title="Best Invoice Financing Solution 2024"
               subTitle="MEA Awards"
             />
           </div>
-          <div className="absolute right-[11%] top-[48%] hidden sm:block lg:right-[11%] lg:top-[35.5%]">
+          <div className="absolute right-[11%] top-[48%] hidden sm:block xl:right-[11%] xl:top-[35.5%]">
             <Badge title="Best Blockchain Startup" subTitle="GB Tech Awards" />
           </div>
           <Image src={heroImg} alt="hero Img" className="mx-auto" />
@@ -111,7 +112,7 @@ const HeroSecondary = () => {
 
 const StatsSection = () => {
   return (
-    <div className="rounded-t-2xl bg-white px-10  pt-8 lg:px-[120px]">
+    <div className="rounded-t-2xl bg-white px-10  pt-8 xl:px-[120px]">
       <div className="relative mx-auto max-w-[1400px]">
         <div className="flex w-full flex-col items-center justify-between sm:flex-row">
           <div className="flex flex-col items-center justify-between">
@@ -142,34 +143,22 @@ const StatsSection = () => {
   );
 };
 
-const Backers = () => {
-  return (
-    <div className="mx-auto mt-24 max-w-[1400px]">
-      <div className="text-center text-xl font-semibold uppercase text-[#667085]">
-        Our Backers
-      </div>
-      <div className="mt-8 hidden justify-center gap-8 lg:flex">
-        {backers.map((item, i) => (
-          <Image src={item} alt="backer" key={i} />
-        ))}
-      </div>
-      <div className="mt-8 flex justify-center gap-8 lg:hidden">
-        <Marquee>
-          {backers.map((item, i) => (
-            <Image src={item} alt="backer" key={i} />
-          ))}
-        </Marquee>
-      </div>
-    </div>
-  );
-};
-
 const VideoSection = () => {
   return (
     <div className="bg-[#F9FAFC]">
-      <div className="mx-auto mt-24 h-auto max-w-[1400px] px-10 py-[112px] lg:px-[120px]">
-        <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient pt-[18px]">
-          <Image src={placeholder} alt="placeholder" className="" />
+      <div className="mx-auto mt-24 h-auto max-w-[1400px] px-10 py-[112px] xl:px-[120px]">
+        <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient p-[18px]">
+          <iframe
+            className="h-full w-full rounded-2xl"
+            // width="560"
+            // height="315"
+            src="https://drive.google.com/file/d/1PHOYrOAUrH4L4K38f0uXq05Yj7fxFlKm/preview?aulg:toplay=1&mute=1&controls=0&origin=http%3A%2F%2Flocalhost%3A3000&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; aulg:toplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </div>
@@ -178,16 +167,16 @@ const VideoSection = () => {
 
 const DecentralizedMoneySection = () => {
   return (
-    <div className="mx-auto mt-24 max-w-[1400px] px-10 lg:px-0">
+    <div className="mx-auto mt-24 max-w-[1400px] px-10 xl:px-0">
       <div className="flex items-center justify-center">
-        <div className="text-center lg:w-1/3">
+        <div className="text-center xl:w-1/3">
           <HighlightedHeading
             heading="Decentralized Money Marketplace for RWAs"
-            vectorPos={{ right: "-8" }}
+            vectorPos={{ right: -8 }}
           />
         </div>
       </div>
-      <div className="mx-10 mb-[100px] mt-16 grid grid-cols-1 gap-6 lg:mx-[120px] lg:grid-cols-2">
+      <div className="mx-10 mb-[100px] mt-16 grid grid-cols-1 gap-6 xl:mx-[120px] xl:grid-cols-2">
         {decentralizedMoneyCardsData.map((card, i) => (
           <DecentralizedMoneyCard card={card} key={i} />
         ))}
@@ -203,11 +192,11 @@ const DecentralizedMoneySection = () => {
 
 const RequestToBorrow = () => {
   return (
-    <div className="mx-auto mt-24 max-w-[1400px] px-6 lg:px-0">
-      <div className="mx-auto text-center text-[40px] font-bold lg:w-1/2">
+    <div className="mx-auto mt-24 max-w-[1400px] px-6 xl:px-0">
+      <div className="mx-auto text-center text-[40px] font-bold xl:w-1/2">
         Get access to Working Capital finance to grow your businsess
       </div>
-      <div className="mt-16 flex flex-col gap-11 lg:flex-row">
+      <div className="mt-16 flex flex-col gap-11 xl:flex-row">
         <div className="grid basis-1/2 grid-cols-2 gap-2">
           {requestToBorrowCardsData.map((card, i) => (
             <div
@@ -219,8 +208,8 @@ const RequestToBorrow = () => {
               </div>
               <div
                 className={cn(
-                  "mt-7 text-center font-bold text-white sm:text-lg",
-                  i === 3 && "text-sm sm:text-lg",
+                  "mt-7 text-center font-bold text-white sm:text-xl",
+                  i === 3 && "text-sm sm:text-xl",
                 )}
               >
                 {card.title}
