@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import heroArrow from "@/public/home/hero_arrow.svg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import DecentralizedInfrastructureSections from "@/components/home/DecentralizedInfrastructureSections";
+import DecentralizedInfrastructureSection from "@/components/home/DecentralizedInfrastructureSection";
 import HighlightedHeading from "@/components/common/HighlightedHeading";
 import { decentralizedMoneyCardsData } from "@/constants/decentralizedMoneyCards";
 import DecentralizedMoneyCard from "@/components/home/DecentralizedMoneyCard";
@@ -237,7 +237,7 @@ export default function Home() {
         <StatsSection />
         <Backers />
         <VideoSection />
-        <DecentralizedInfrastructureSections />
+        <DecentralizedInfrastructureSection />
         <DecentralizedMoneySection />
         <RequestToBorrow />
         <div className="mt-24 bg-[#F9FAFC]">

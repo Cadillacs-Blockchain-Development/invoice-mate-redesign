@@ -11,14 +11,17 @@ import { accordianData } from "@/constants/accordianData";
 import { cn } from "@/lib/utils";
 import HighlightedHeading from "../common/HighlightedHeading";
 
-const DecentralizedInfrastructureSections = () => {
+const DecentralizedInfrastructureSection = () => {
   const [index, setIndex] = useState(0);
   const [isImgLoaded, setIsImgLoaded] = useState(false);
   return (
     <div className="mx-auto mt-24 max-w-[1400px] px-10 xl:px-0">
       <div className="flex flex-col gap-8 xl:flex-row xl:gap-[92px]">
         <div className="xl:basis-1/2">
-          <HighlightedHeading heading="Decentralized Infrastructure for Invoice Financing" />
+          <HighlightedHeading
+            heading="Decentralized Infrastructure for Invoice Financing"
+            vectorPos={{ right: -4 }}
+          />
         </div>
         <div className="text-xl text-[#596780] xl:basis-1/2 ">
           Verified & Risk Scored invoices are converted into financial
@@ -117,4 +120,4 @@ const DecentralizedInfrastructureSections = () => {
   );
 };
 
-export default DecentralizedInfrastructureSections;
+export default DecentralizedInfrastructureSection;
