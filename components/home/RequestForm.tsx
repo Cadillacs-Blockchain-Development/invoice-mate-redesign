@@ -72,7 +72,7 @@ const RequestForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last Name</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl className="rounded-full">
                 <Input placeholder="Email" {...field} />
               </FormControl>
@@ -85,7 +85,7 @@ const RequestForm = () => {
           name="loanAmt"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last Name</FormLabel>
+              <FormLabel>Loan Amount</FormLabel>
               <FormControl className="rounded-full">
                 <Input placeholder="Loan Amount" {...field} />
               </FormControl>

@@ -1,13 +1,27 @@
-import partner_1 from "@/public/partners/institutional/partner1.svg";
-import creditBook from "@/public/partners/institutional/creditBook.svg";
-import jazz from "@/public/partners/institutional/jazz.svg";
-import mobilink from "@/public/partners/institutional/mobilink.svg";
-import salic from "@/public/partners/institutional/salic.svg";
-import telenor from "@/public/partners/institutional/telenor.svg";
-import trax from "@/public/partners/institutional/trax.svg";
-import trella from "@/public/partners/institutional/trella.svg";
-import zaraye from "@/public/partners/institutional/zaraye.svg";
-import zoth from "@/public/partners/institutional/zoth.svg";
+import institutionalImg1 from "@/public/Partners/Institutional/Akhuwat.png";
+import institutionalImg2 from "@/public/Partners/Institutional/CreditBook.png";
+import institutionalImg3 from "@/public/Partners/Institutional/Halliday_Growth.png";
+import institutionalImg4 from "@/public/Partners/Institutional/JS_Bank.png";
+import institutionalImg5 from "@/public/Partners/Institutional/Mobilink_Bank.png";
+import institutionalImg6 from "@/public/Partners/Institutional/Parwaaz.png";
+import institutionalImg7 from "@/public/Partners/Institutional/Siraj.png";
+import institutionalImg8 from "@/public/Partners/Institutional/Zindagi.png";
+import institutionalImg9 from "@/public/Partners/Institutional/Zoth.png";
+import institutionalImg10 from "@/public/Partners/Institutional/telenor-microfinance-bank.png";
+import institutionalImg11 from "@/public/Partners/Institutional/tradefinex.png";
+
+import jazz from "@/public/partners/business/jazz.svg";
+import salic from "@/public/partners/business/salic.svg";
+import telenor from "@/public/partners/business/telenor.svg";
+import trax from "@/public/partners/business/trax.svg";
+import trella from "@/public/partners/business/trella.svg";
+import zaraye from "@/public/partners/business/zaraye.svg";
+import businesslImg1 from "@/public/Partners/Business/Food_Panda.png";
+import businesslImg3 from "@/public/Partners/Business/Mentor_Health.png";
+import businesslImg6 from "@/public/Partners/Business/Snap_Retail.png";
+import businesslImg10 from "@/public/Partners/Business/Umrah_Companions.png";
+import businesslImg12 from "@/public/Partners/Business/cadillacsLogo.svg";
+
 
 import bloomberg from "@/public/partners/featured/bloomberg.svg";
 import cnbc from "@/public/partners/featured/cnbc.svg";
@@ -23,32 +37,34 @@ const intitutionalPartners =
 {
     title: "Institutional Lending Partner with $2.16+ Bn AUM",
     partners: [
-        partner_1,
-        trella,
-        jazz,
-        salic,
-        mobilink,
-        creditBook,
-        zoth,
-        telenor,
-        trax,
-        zaraye,
+        institutionalImg1,
+        institutionalImg2,
+        institutionalImg3,
+        institutionalImg4,
+        institutionalImg5,
+        institutionalImg6,
+        institutionalImg7,
+        institutionalImg8,
+        institutionalImg9,
+        institutionalImg10,
+        institutionalImg11,
     ],
 }
 const businessPartners =
 {
     title: "Accessing 53K + Businesses through our B2B Partners",
     partners: [
-        partner_1,
         trella,
         jazz,
         salic,
-        mobilink,
-        creditBook,
-        zoth,
         telenor,
         trax,
         zaraye,
+        businesslImg1,
+        businesslImg3,
+        businesslImg6,
+        businesslImg10,
+        businesslImg12,
     ],
 }
 

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
@@ -19,8 +20,13 @@ const PartnersComponent = ({
             src={partner}
             alt="partner image"
             key={i}
-            height={64}
-            className="max-w-min"
+            height={110}
+            className={cn(
+              "max-w-min",
+              title === "Accessing 53K + Businesses through our B2B Partners" &&
+                i === 10 &&
+                "object-[1px_0] invert",
+            )}
           />
         ))}
       </div>
