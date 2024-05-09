@@ -10,9 +10,9 @@ const Backers = () => {
         Our Backers
       </div>
       <div className="mt-8 flex justify-center gap-8">
-        <Marquee>
+        <Marquee autoFill>
           {backers.map((item, i) => (
-            <Image src={item} alt="backer" key={i} />
+            <Image src={item} alt="backer" key={i} className="mr-4" />
           ))}
         </Marquee>
       </div>

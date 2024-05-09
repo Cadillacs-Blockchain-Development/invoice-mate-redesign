@@ -35,7 +35,7 @@ const DecentralizedInfrastructureSections = () => {
             defaultValue={accordianData[0].title}
           >
             {accordianData.map((item, i) => (
-              <AccordionItem value={item.title} key={i}>
+              <AccordionItem value={item.title} key={item.title}>
                 <AccordionTrigger
                   onClick={() => {
                     setIndex(i);

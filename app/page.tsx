@@ -1,15 +1,8 @@
+import React from "react";
 import Image, { StaticImageData } from "next/image";
 import heroArrow from "@/public/home/hero_arrow.svg";
-import placeholder from "@/public/placeholder.svg";
-import delloitLogo from "@/public/home/delloit_logo.svg";
-import award from "@/public/icons/award.svg";
-import heroImg from "@/public/home/hero_image.svg";
-import Marquee from "react-fast-marquee";
-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { backers } from "@/constants/partners/backers";
-import { accordianData } from "@/constants/accordianData";
 import DecentralizedInfrastructureSections from "@/components/home/DecentralizedInfrastructureSections";
 import HighlightedHeading from "@/components/common/HighlightedHeading";
 import { decentralizedMoneyCardsData } from "@/constants/decentralizedMoneyCards";
@@ -22,6 +15,9 @@ import { partners } from "@/constants/partners/partners";
 import Blogs from "@/components/home/Blogs";
 import News from "@/components/home/News";
 import Backers from "@/components/common/Backers";
+import delloitLogo from "@/public/home/delloit_logo.svg";
+import award from "@/public/icons/award.svg";
+import heroImg from "@/public/home/hero_image.svg";
 
 const Badge = ({
   icon,
@@ -80,7 +76,10 @@ const HeroPrimary = () => {
 
 const HeroSecondary = () => {
   return (
-    <div className="relative mx-auto max-w-[1400px] overflow-x-clip sm:overflow-x-visible">
+    <div
+      className="relative mx-auto max-w-[1400px] overflow-x-clip sm:overflow-x-visible"
+      id="heroSecondary"
+    >
       <div className="absolute -left-[10%] top-10 z-[10] h-[562px] w-[521px] rounded-[1355px] bg-[#5A2C66] opacity-70 blur-[180px]"></div>
       <div className="relative z-50 mx-auto mt-14 max-w-[1400px] pb-24">
         <div className="mx-auto w-[94%] sm:w-full">
@@ -178,7 +177,7 @@ const DecentralizedMoneySection = () => {
       </div>
       <div className="mx-10 mb-[100px] mt-16 grid grid-cols-1 gap-6 xl:mx-[120px] xl:grid-cols-2">
         {decentralizedMoneyCardsData.map((card, i) => (
-          <DecentralizedMoneyCard card={card} key={i} />
+          <DecentralizedMoneyCard card={card} key={card.title} />
         ))}
       </div>
       <div className="flex justify-center">
@@ -192,7 +191,7 @@ const DecentralizedMoneySection = () => {
 
 const RequestToBorrow = () => {
   return (
-    <div className="mx-auto mt-24 max-w-[1400px] px-6 xl:px-0">
+    <div className="mx-auto mt-24 max-w-[1400px] px-6 xl:px-0" id="borrow">
       <div className="mx-auto text-center text-[40px] font-bold xl:w-1/2">
         Get access to Working Capital finance to grow your businsess
       </div>
@@ -200,7 +199,7 @@ const RequestToBorrow = () => {
         <div className="grid basis-1/2 grid-cols-2 gap-2">
           {requestToBorrowCardsData.map((card, i) => (
             <div
-              key={i}
+              key={card.title}
               className="flex aspect-square flex-col items-center justify-center rounded-xl bg-borrow-card-gradient p-6"
             >
               <div>
@@ -246,7 +245,7 @@ export default function Home() {
             <PartnersComponent
               title={item.title}
               partners={item.partners}
-              key={i}
+              key={item.title}
             />
           ))}
         </div>

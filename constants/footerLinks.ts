@@ -8,16 +8,16 @@
 //     ],
 // };
 
-const companyLinks = {
-    heading: "Company",
-    links: [
-        { title: "About Us", link: "" },
-        { title: "Newsletters", link: "" },
-        { title: "Our Partners", link: "" },
-        { title: "Career", link: "" },
-        { title: "Contact Us", link: "" },
-    ],
-};
+// const companyLinks = {
+//     heading: "Company",
+//     links: [
+//         { title: "About Us", link: "" },
+//         { title: "Newsletters", link: "" },
+//         { title: "Our Partners", link: "" },
+//         { title: "Career", link: "" },
+//         { title: "Contact Us", link: "" },
+//     ],
+// };
 
 // const resourcesLinks = {
 //     heading: "Resources",
@@ -40,6 +40,6 @@ const socialLinks = {
     ],
 };
 
-const footerLinks = [companyLinks, socialLinks];
+const footerLinks = [socialLinks];
 
 export default footerLinks;

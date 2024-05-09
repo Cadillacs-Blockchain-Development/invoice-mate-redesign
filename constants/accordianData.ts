@@ -27,7 +27,7 @@ export const accordianData = [
     img: accordian_Img_1,
   },
   {
-    title: "Ensuring Invoices and Borrowing Integrity with KYI",
+    title: "Verification and Risk Analysis of Invoices via KYI",
     data: [
       {
         heading: "Secure & Smart AI",

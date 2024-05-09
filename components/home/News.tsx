@@ -44,7 +44,7 @@ const News = () => {
         <div className="mt-16 grid grid-cols-1 place-items-stretch items-stretch justify-center gap-8 px-6 sm:px-0 lg:grid-cols-3">
           {newsCards.map((card, i) => (
             <Link
-              key={i}
+              key={card.title}
               href={card.link}
               target="_blank"
               className="mx-auto flex flex-col"

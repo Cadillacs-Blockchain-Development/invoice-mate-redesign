@@ -128,9 +128,6 @@ const MeetTheTeam = () => {
               <div>
                 <LucideLinkedin color="#98A2B3" />
               </div>
-              <div>
-                <Dribbble color="#98A2B3" />
-              </div>
             </div>
           </div>
         ))}

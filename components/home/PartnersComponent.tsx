@@ -15,7 +15,13 @@ const PartnersComponent = ({
       </div>
       <div className="grid grid-cols-2 flex-wrap items-center justify-center gap-8 sm:flex lg:px-20">
         {partners.map((partner, i) => (
-          <Image src={partner} alt="partner image" key={i} />
+          <Image
+            src={partner}
+            alt="partner image"
+            key={i}
+            height={64}
+            className="max-w-min"
+          />
         ))}
       </div>
     </div>
