@@ -19,16 +19,24 @@ const Navbar = () => {
   const pathname = usePathname();
   const [mobileNavToggle, setMobileNavToggle] = useState(false);
   const [navBg, setNavBg] = useState(false);
+  const [hideNav, setHideNav] = useState(false);
+  const [lastScrollPos, setLastScrollPos] = useState(0);
 
   useEffect(() => {
-    const changeNavBg = () => {
+    const updateNav = () => {
       window.scrollY >= 100 ? setNavBg(true) : setNavBg(false);
+      if (window.scrollY > lastScrollPos && window.scrollY > 1500) {
+        setHideNav(true);
+      } else {
+        setHideNav(false);
+      }
+      setLastScrollPos(window.scrollY);
     };
-    window.addEventListener("scroll", changeNavBg);
+    window.addEventListener("scroll", updateNav);
     return () => {
-      window.removeEventListener("scroll", changeNavBg);
+      window.removeEventListener("scroll", updateNav);
     };
-  }, []);
+  }, [hideNav, lastScrollPos]);
   if (pathname.indexOf("/studio") === -1) {
     return (
       <>
@@ -38,6 +46,7 @@ const Navbar = () => {
             navBg
               ? " top-1 w-[98%] rounded-xl bg-[#55122B] p-4"
               : "bg-transparent",
+            hideNav ? "-translate-y-[200px]" : "translate-y-0",
           )}
         >
           <Link href={"/"}>
