@@ -148,15 +148,12 @@ const VideoSection = () => {
       <div className="mx-auto mt-24 h-auto max-w-[1400px] px-10 py-[112px] xl:px-[120px]">
         <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient p-[18px]">
           <iframe
+            src="https://cadillacsin-my.sharepoint.com/personal/contact_cadillacs_in/_layouts/15/embed.aspx?UniqueId=33445e75-447c-4eb0-84f1-61fbe2f14587&quality=high&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
+            width="640"
+            height="360"
             className="h-full w-full rounded-2xl"
-            // width="560"
-            // height="315"
-            src="https://drive.google.com/file/d/1PHOYrOAUrH4L4K38f0uXq05Yj7fxFlKm/preview?aulg:toplay=1&mute=1&controls=0&origin=http%3A%2F%2Flocalhost%3A3000&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; aulg:toplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
+            title="Invoice Mate"
+            // style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"
           ></iframe>
         </div>
       </div>
