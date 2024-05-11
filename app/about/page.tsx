@@ -125,9 +125,9 @@ const MeetTheTeam = () => {
               <div>
                 <Twitter color="#98A2B3" />
               </div>
-              <div>
+              <a href={data.links.linkedin} target="_blank">
                 <LucideLinkedin color="#98A2B3" />
-              </div>
+              </a>
             </div>
           </div>
         ))}

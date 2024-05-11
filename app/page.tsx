@@ -151,7 +151,7 @@ const VideoSection = () => {
             className="h-full w-full rounded-2xl"
             // width="560"
             // height="315"
-            src="https://drive.google.com/file/d/1PHOYrOAUrH4L4K38f0uXq05Yj7fxFlKm/preview?aulg:toplay=1&mute=1&controls=0&origin=http%3A%2F%2Flocalhost%3A3000&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1"
+            src="https://www.youtube.com/embed/HSc7glBp2Bs"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; aulg:toplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
