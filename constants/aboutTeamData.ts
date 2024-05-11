@@ -1,4 +1,4 @@
-import Muhammad_Salman from "@/public/about/Muhammad_Salman.svg";
+import Muhammad_Salman from "@/public/about/Muhammad_salman.svg";
 import Usman_Salahuddin from "@/public/about/Usman_Salahuddin.svg";
 import Muhammad_Ibrahim from "@/public/about/Muhammad_Ibrahim.svg";
 import Zeeshan_Abid from "@/public/about/Zeeshan_Abid.svg";

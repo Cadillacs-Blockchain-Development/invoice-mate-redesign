@@ -1,14 +1,14 @@
-import institutionalImg1 from "@/public/Partners/Institutional/Akhuwat.png";
-import institutionalImg2 from "@/public/Partners/Institutional/CreditBook.png";
-import institutionalImg3 from "@/public/Partners/Institutional/Halliday_Growth.png";
-import institutionalImg4 from "@/public/Partners/Institutional/JS_Bank.png";
-import institutionalImg5 from "@/public/Partners/Institutional/Mobilink_Bank.png";
-import institutionalImg6 from "@/public/Partners/Institutional/Parwaaz.png";
-import institutionalImg7 from "@/public/Partners/Institutional/Siraj.png";
-import institutionalImg8 from "@/public/Partners/Institutional/Zindagi.png";
-import institutionalImg9 from "@/public/Partners/Institutional/Zoth.png";
-import institutionalImg10 from "@/public/Partners/Institutional/telenor-microfinance-bank.png";
-import institutionalImg11 from "@/public/Partners/Institutional/tradefinex.png";
+import institutionalImg1 from "@/public/partners/institutional/Akhuwat.png";
+import institutionalImg2 from "@/public/partners/institutional/CreditBook.png";
+import institutionalImg3 from "@/public/partners/institutional/Halliday_Growth.png";
+import institutionalImg4 from "@/public/partners/institutional/JS_Bank.png";
+import institutionalImg5 from "@/public/partners/institutional/Mobilink_Bank.png";
+import institutionalImg6 from "@/public/partners/institutional/Parwaaz.png";
+import institutionalImg7 from "@/public/partners/institutional/Siraj.png";
+import institutionalImg8 from "@/public/partners/institutional/Zindagi.png";
+import institutionalImg9 from "@/public/partners/institutional/Zoth.png";
+import institutionalImg10 from "@/public/partners/institutional/telenor-microfinance-bank.png";
+import institutionalImg11 from "@/public/partners/institutional/tradefinex.png";
 
 import jazz from "@/public/partners/business/jazz.svg";
 import salic from "@/public/partners/business/salic.svg";
@@ -16,11 +16,11 @@ import telenor from "@/public/partners/business/telenor.svg";
 import trax from "@/public/partners/business/trax.svg";
 import trella from "@/public/partners/business/trella.svg";
 import zaraye from "@/public/partners/business/zaraye.svg";
-import businesslImg1 from "@/public/Partners/Business/Food_Panda.png";
-import businesslImg3 from "@/public/Partners/Business/Mentor_Health.png";
-import businesslImg6 from "@/public/Partners/Business/Snap_Retail.png";
-import businesslImg10 from "@/public/Partners/Business/Umrah_Companions.png";
-import businesslImg12 from "@/public/Partners/Business/cadillacsLogo.svg";
+import businesslImg1 from "@/public/partners/business/Food_Panda.png";
+import businesslImg3 from "@/public/partners/business/Mentor_Health.png";
+import businesslImg6 from "@/public/partners/business/Snap_Retail.png";
+import businesslImg10 from "@/public/partners/business/Umrah_Companions.png";
+import businesslImg12 from "@/public/partners/business/cadillacsLogo.svg";
 
 
 import bloomberg from "@/public/partners/featured/bloomberg.svg";
