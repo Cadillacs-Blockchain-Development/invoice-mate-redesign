@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { inter } from "@/utils/fonts";
 import { Dribbble, LucideLinkedin, Twitter } from "lucide-react";
 import { officesData } from "@/constants/officesData";
+import Link from "next/link";
 
 const Heading = () => {
   return (
@@ -125,9 +126,9 @@ const MeetTheTeam = () => {
               <div>
                 <Twitter color="#98A2B3" />
               </div>
-              <a href={data.links.linkedin} target="_blank">
+              <Link href={data.links.linkedin} target="_blank">
                 <LucideLinkedin color="#98A2B3" />
-              </a>
+              </Link>
             </div>
           </div>
         ))}

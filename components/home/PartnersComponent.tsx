@@ -22,7 +22,7 @@ const PartnersComponent = ({
             key={i}
             height={110}
             className={cn(
-              "max-w-min",
+              "max-w-[100px] sm:max-w-[120px]",
               title === "Accessing 53K + Businesses through our B2B Partners" &&
                 i === 10 &&
                 "object-[1px_0] invert",

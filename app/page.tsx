@@ -146,11 +146,9 @@ const VideoSection = () => {
   return (
     <div className="bg-[#F9FAFC]">
       <div className="mx-auto mt-24 h-auto max-w-[1400px] px-10 py-[112px] xl:px-[120px]">
-        <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient p-[18px]">
+        <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient p-2 sm:p-[18px]">
           <iframe
             className="h-full w-full rounded-2xl"
-            // width="560"
-            // height="315"
             src="https://www.youtube.com/embed/HSc7glBp2Bs"
             title="YouTube video player"
             frameBorder="0"
