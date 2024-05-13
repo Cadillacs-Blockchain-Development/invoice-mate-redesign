@@ -152,8 +152,14 @@ const VideoSection = () => {
             width="640"
             height="360"
             className="h-full w-full rounded-2xl"
-            title="Invoice Mate"
-            // style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"
+            // width="560"
+            // height="315"
+            src="https://www.youtube.com/embed/HSc7glBp2Bs"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; aulg:toplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       </div>
