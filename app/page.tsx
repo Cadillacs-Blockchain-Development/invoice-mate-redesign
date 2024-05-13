@@ -146,14 +146,9 @@ const VideoSection = () => {
   return (
     <div className="bg-[#F9FAFC]">
       <div className="mx-auto mt-24 h-auto max-w-[1400px] px-10 py-[112px] xl:px-[120px]">
-        <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient p-[18px]">
+        <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient p-2 sm:p-[18px]">
           <iframe
-            src="https://cadillacsin-my.sharepoint.com/personal/contact_cadillacs_in/_layouts/15/embed.aspx?UniqueId=33445e75-447c-4eb0-84f1-61fbe2f14587&quality=high&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
-            width="640"
-            height="360"
             className="h-full w-full rounded-2xl"
-            // width="560"
-            // height="315"
             src="https://www.youtube.com/embed/HSc7glBp2Bs"
             title="YouTube video player"
             frameBorder="0"

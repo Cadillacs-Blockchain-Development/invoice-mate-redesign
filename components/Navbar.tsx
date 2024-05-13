@@ -93,20 +93,20 @@ const Navbar = () => {
               : "bg-transparent",
           )}
         >
-          <div>
+          <Link href={"/"}>
             <Image
-              src={pathname === "/" ? light_logo : dark_logo}
+              src={pathname === "/" || navBg ? light_logo : dark_logo}
               alt="logo"
               width={169}
               height={32}
             />
-          </div>
+          </Link>
           <div onClick={() => setMobileNavToggle(!mobileNavToggle)}>
             {/* <Hamburger isOpen={mobileNavToggle} setIsOpen={setMobileNavToggle} /> */}
             {!mobileNavToggle ? (
-              <MenuIcon color="white" />
+              <MenuIcon color={pathname === "/" || navBg ? "white" : "black"} />
             ) : (
-              <XIcon color="white" />
+              <XIcon color={pathname === "/" || navBg ? "white" : "black"} />
             )}
           </div>
           <div
@@ -118,7 +118,7 @@ const Navbar = () => {
             <ul className="flex flex-col items-start justify-center gap-10 text-left text-lg font-medium text-white">
               {links.map((link, i) => (
                 <Link
-                  href={link.name}
+                  href={link.link}
                   onClick={() => setMobileNavToggle(false)}
                   key={link.link}
                 >
