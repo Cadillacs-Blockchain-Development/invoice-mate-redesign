@@ -52,6 +52,31 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'metadata',
+      title: 'Metadata',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          rows: 3,
+        }),
+        defineField({
+          name: 'keywords',
+          title: 'Keywords',
+          type: 'array',
+          of: [{ type: 'string' }],
+        }),
+        defineField({
+          name: 'tags',
+          title: 'Tags',
+          type: 'array',
+          of: [{ type: 'string' }],
+        }),
+      ],
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
