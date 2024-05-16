@@ -191,7 +191,7 @@ const RequestToBorrow = () => {
   return (
     <div className="mx-auto mt-24 max-w-[1400px] px-6 xl:px-0" id="borrow">
       <div className="mx-auto text-center text-[40px] font-bold xl:w-1/2">
-        Get access to Working Capital finance to grow your businsess
+        Get access to Working Capital finance to grow your business
       </div>
       <div className="mt-16 flex flex-col gap-11 xl:flex-row">
         <div className="grid basis-1/2 grid-cols-2 gap-2">

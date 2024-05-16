@@ -108,8 +108,8 @@ const RequestForm = () => {
         />
         <FormDescription className="col-span-2 flex flex-col gap-6 text-[#667085]">
           <span>
-            Give a briet overview of your companies invoice receivables detals
-            and use of funds.
+            Give a brief overview of your company&apos;s invoice receivables
+            details and use of funds
           </span>
           <span>
             Email us at{" "}
