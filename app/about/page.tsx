@@ -95,13 +95,13 @@ const MeetTheTeam = () => {
           <Image
             src={headingVector}
             alt="star"
-            className="-o100%] absolute hidden hidden sm:block sm:block"
+            className="absolute left-[-46%] top-[-100%] hidden sm:block"
           />
           Meet the Team
           <Image
             src={headingVector}
             alt="star"
-            className="den absolute bottom-[-50%] hidden scale-90 sm:block sm:block"
+            className="absolute bottom-[-50%] right-[-40%] hidden scale-90 sm:block"
           />
         </span>
         <p className="mx-auto text-center text-xl text-[#667085] lg:max-w-[50%]">
