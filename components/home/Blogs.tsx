@@ -34,7 +34,7 @@ const blogCards = [
 const Blogs = () => {
   return (
     <div className={`mt-24 pb-16`}>
-      <div className=" mx-auto max-w-[1400px] sm:px-16">
+      <div className=" container mx-auto sm:px-16">
         <h2 className="pt-10 text-center text-[32px] font-semibold text-[#040815]">
           Blog
         </h2>

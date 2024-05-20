@@ -34,7 +34,7 @@ const newsCards = [
 const News = () => {
   return (
     <div className={`mt-24 pb-16`}>
-      <div className="mx-auto max-w-[1400px] sm:px-16">
+      <div className="container mx-auto sm:px-16">
         <h2 className="pt-10 text-center text-[32px] font-semibold text-[#040815]">
           News & Media
         </h2>
@@ -45,8 +45,7 @@ const News = () => {
           {newsCards.map((card, i) => (
             <Link
               key={card.title}
-              href={card.link}
-              target="_blank"
+              href={"/news"}
               className="mx-auto flex flex-col"
             >
               <Card className="shadow-card-shadow mt-4 flex max-w-[400px] flex-grow flex-col overflow-hidden">

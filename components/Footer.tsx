@@ -10,7 +10,7 @@ const Footer = () => {
   const pathname = usePathname();
   if (pathname.indexOf("/studio") === -1) {
     return (
-      <div className="mx-auto max-w-[1400px] bg-white px-6 pb-16 pt-8 lg:px-[100px] lg:pt-[120px]">
+      <div className="container mx-auto bg-white px-6 pb-16 pt-8 lg:px-[100px] lg:pt-[120px]">
         <div className="flex flex-col justify-center border-b border-[#CEBEFE] pb-16 lg:grid-rows-1 lg:flex-row lg:justify-between">
           <div className="flex flex-col items-start justify-start">
             <Link href={"/"}>

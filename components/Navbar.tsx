@@ -42,7 +42,7 @@ const Navbar = () => {
       <>
         <div
           className={cn(
-            "fixed left-1/2 top-0 z-[999] hidden w-full -translate-x-1/2 items-center justify-between p-6 transition-all duration-500 sm:flex",
+            "container fixed left-1/2 top-0 z-[999] hidden w-full -translate-x-1/2 items-center justify-between p-6 transition-all duration-500 sm:flex",
             navBg
               ? " top-1 w-[98%] rounded-xl bg-[#55122B] p-4"
               : "bg-transparent",

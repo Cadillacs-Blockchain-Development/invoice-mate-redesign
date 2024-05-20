@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const Backers = () => {
   return (
-    <div className="mx-auto mt-24 max-w-[1400px]">
+    <div className="container mx-auto mt-24">
       <div className="text-center text-xl font-semibold uppercase text-[#667085]">
         Our Backers
       </div>

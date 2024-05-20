@@ -15,7 +15,7 @@ const DecentralizedInfrastructureSection = () => {
   const [index, setIndex] = useState(0);
   const [isImgLoaded, setIsImgLoaded] = useState(false);
   return (
-    <div className="mx-auto mt-24 max-w-[1400px] px-10 xl:px-0">
+    <div className="container mx-auto mt-24 px-10 xl:px-0">
       <div className="flex flex-col gap-8 xl:flex-row xl:gap-[92px]">
         <div className="xl:basis-1/2">
           <HighlightedHeading

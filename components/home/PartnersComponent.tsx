@@ -10,7 +10,7 @@ const PartnersComponent = ({
   partners: StaticImageData[];
 }) => {
   return (
-    <div className="mx-auto flex  max-w-[1400px] flex-col items-center justify-center gap-8 px-8 py-24">
+    <div className="container mx-auto  flex flex-col items-center justify-center gap-8 px-8 py-24">
       <div className="text-center text-[32px] font-semibold text-[#667085]">
         {title}
       </div>
