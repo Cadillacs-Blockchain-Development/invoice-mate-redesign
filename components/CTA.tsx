@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const CTA = () => {
   const pathname = usePathname();
@@ -19,7 +20,9 @@ const CTA = () => {
               Instruments via Know Your Invoice (KYI)
             </div>
             <Button className="mt-6 rounded-full bg-white text-center text-base  font-semibold text-[#8F1F48] transition hover:bg-white/80 active:scale-[0.97]">
-              App coming soon
+              <Link href={"https://app.invoicemate.net/"} target="_blank">
+                App
+              </Link>
             </Button>
           </div>
         </div>

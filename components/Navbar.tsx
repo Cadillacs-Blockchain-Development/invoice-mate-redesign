@@ -80,7 +80,9 @@ const Navbar = () => {
           </ul>
           <div>
             <Button className="rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97]">
-              App coming soon
+              <Link href={"https://app.invoicemate.net/"} target="_blank">
+                App
+              </Link>
             </Button>
           </div>
         </div>
@@ -128,7 +130,9 @@ const Navbar = () => {
             </ul>
             <div>
               <Button className="mx-auto mt-8 rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97]">
-                App coming soon
+                <Link href={"https://app.invoicemate.net/"} target="_blank">
+                  App
+                </Link>
               </Button>
             </div>
           </div>

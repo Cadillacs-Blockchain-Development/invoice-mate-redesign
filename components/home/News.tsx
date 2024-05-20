@@ -11,7 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { inter } from "@/utils/fonts";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRightCircle, ArrowUpRight } from "lucide-react";
 
 const newsCards = [
   {
@@ -38,6 +38,15 @@ const News = () => {
         <h2 className="pt-10 text-center text-[32px] font-semibold text-[#040815]">
           News & Media
         </h2>
+        <Link
+          href={"/news"}
+          className="float-end mt-4 flex items-center gap-1 text-[#9E2654] transition hover:underline"
+        >
+          <span> View All</span>
+          <span>
+            <ArrowRightCircle />
+          </span>
+        </Link>
         <div className="mx-auto mt-3 px-10 text-center text-xl text-[#667085] lg:max-w-[66%] lg:px-0">
           Find out what&apos;s happening in and around InvoiceMate
         </div>
@@ -45,7 +54,8 @@ const News = () => {
           {newsCards.map((card, i) => (
             <Link
               key={card.title}
-              href={"/news"}
+              href={card.link}
+              target="_blank"
               className="mx-auto flex flex-col"
             >
               <Card className="shadow-card-shadow mt-4 flex max-w-[400px] flex-grow flex-col overflow-hidden">
