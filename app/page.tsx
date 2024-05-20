@@ -48,7 +48,7 @@ const Badge = ({
 
 const HeroPrimary = () => {
   return (
-    <div className="relative z-50 mx-auto max-w-[1400px] overflow-x-clip px-8 xl:overflow-x-visible xl:px-0">
+    <div className="container relative z-50 mx-auto overflow-x-clip px-8 xl:overflow-x-visible xl:px-0">
       <div className="absolute top-0 z-[10] h-[1066px] w-full rounded-[1355px] bg-[#9E2654] blur-[150px]"></div>
       <div className="absolute right-0 top-10 z-50 h-[562px]  w-[521px] rounded-[1355px] bg-[#5A2C66] blur-[220px]"></div>
       <div className="relative z-50 mx-auto pt-[176px] text-center text-[32px] font-bold text-white sm:text-[72px] xl:w-1/2">
@@ -77,11 +77,11 @@ const HeroPrimary = () => {
 const HeroSecondary = () => {
   return (
     <div
-      className="relative mx-auto max-w-[1400px] overflow-x-clip sm:overflow-x-visible"
+      className="container relative mx-auto overflow-x-clip sm:overflow-x-visible"
       id="heroSecondary"
     >
       <div className="absolute -left-[10%] top-10 z-[10] h-[562px] w-[521px] rounded-[1355px] bg-[#5A2C66] opacity-70 blur-[180px]"></div>
-      <div className="relative z-50 mx-auto mt-14 max-w-[1400px] pb-24">
+      <div className="container relative z-50 mx-auto mt-14 pb-24">
         <div className="mx-auto w-[94%] sm:w-full">
           <Badge icon={delloitLogo} title="Rising Star Winner" />
         </div>
@@ -112,7 +112,7 @@ const HeroSecondary = () => {
 const StatsSection = () => {
   return (
     <div className="rounded-t-2xl bg-white px-10  pt-8 xl:px-[120px]">
-      <div className="relative mx-auto max-w-[1400px]">
+      <div className="container relative mx-auto">
         <div className="flex w-full flex-col items-center justify-between sm:flex-row">
           <div className="flex flex-col items-center justify-between">
             <span className="text-[32px] font-bold text-[#58142D] ">
@@ -145,7 +145,7 @@ const StatsSection = () => {
 const VideoSection = () => {
   return (
     <div className="bg-[#F9FAFC]">
-      <div className="mx-auto mt-24 h-auto max-w-[1400px] px-10 py-[112px] xl:px-[120px]">
+      <div className="container mx-auto mt-24 h-auto px-10 py-[112px] xl:px-[120px]">
         <div className="flex aspect-video items-center justify-center rounded-2xl bg-video-background-gradient p-2 sm:p-[18px]">
           <iframe
             className="h-full w-full rounded-2xl"
@@ -164,7 +164,7 @@ const VideoSection = () => {
 
 const DecentralizedMoneySection = () => {
   return (
-    <div className="mx-auto mt-24 max-w-[1400px] px-10 xl:px-0">
+    <div className="container mx-auto mt-24 px-10 xl:px-0">
       <div className="flex items-center justify-center">
         <div className="text-center xl:w-1/3">
           <HighlightedHeading
@@ -189,7 +189,7 @@ const DecentralizedMoneySection = () => {
 
 const RequestToBorrow = () => {
   return (
-    <div className="mx-auto mt-24 max-w-[1400px] px-6 xl:px-0" id="borrow">
+    <div className="container mx-auto mt-24 px-6 xl:px-0" id="borrow">
       <div className="mx-auto text-center text-[40px] font-bold xl:w-1/2">
         Get access to Working Capital finance to grow your business
       </div>

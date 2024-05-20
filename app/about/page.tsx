@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const Heading = () => {
   return (
-    <div className="mx-auto max-w-[1400px]">
+    <div className="container mx-auto">
       <div className="my-24 flex flex-col items-center justify-center"></div>
       <div className="text-center  text-[32px] font-bold text-[#040815] sm:text-[40px]">
         About the Company
@@ -29,7 +29,7 @@ const Heading = () => {
 const Stats = () => {
   return (
     <div className="my-24 bg-[#F9FAFC]">
-      <div className="mx-auto flex max-w-[1400px] flex-col-reverse items-center justify-center gap-24 px-6 py-24 sm:px-20 lg:flex-row">
+      <div className="container mx-auto flex flex-col-reverse items-center justify-center gap-24 px-6 py-24 sm:px-20 lg:flex-row">
         <div className="flex items-center justify-center rounded-xl bg-[#F3F5F7] px-8 py-32 sm:basis-1/2">
           <Image src={statsImg} alt="journey" />
         </div>
@@ -89,7 +89,7 @@ const Stats = () => {
 
 const MeetTheTeam = () => {
   return (
-    <div className="mx-auto mt-24 max-w-[1440px] px-6 py-24 sm:px-0">
+    <div className="container mx-auto mt-24 px-6 py-24 sm:px-0">
       <div className="flex flex-col items-center justify-center gap-3 text-center">
         <span className="relative text-[40px] font-bold text-[#040815]">
           <Image
