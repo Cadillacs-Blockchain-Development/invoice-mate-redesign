@@ -153,7 +153,7 @@ const Information = () => {
       link: "https://www.facebook.com/InvoiceMate-107177258098569",
       icon: facebookIcon,
     },
-    { link: "https://twitter.com/MateInvoice", icon: twitterIcon },
+    { link: "https://www.youtube.com/@invoicematetech", icon: twitterIcon },
     { link: "", icon: youtubeIcon },
   ];
   return (

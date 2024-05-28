@@ -124,9 +124,9 @@ const MeetTheTeam = () => {
               <span className="text-lg text-[#9E2654]">{data.title}</span>
             </div>
             <div className="flex gap-5">
-              <div>
+              {/* <div>
                 <Twitter color="#98A2B3" />
-              </div>
+              </div> */}
               <Link href={data.links.linkedin} target="_blank">
                 <LucideLinkedin color="#98A2B3" />
               </Link>

@@ -36,7 +36,7 @@ const socialLinks = {
         { title: "Twitter", link: "https://twitter.com/MateInvoice" },
         { title: "Instagram", link: "https://www.instagram.com/invoicemate/" },
         { title: "Facebook", link: "https://www.facebook.com/InvoiceMate-107177258098569" },
-        { title: "YouTube", link: "" },
+        { title: "YouTube", link: "https://www.youtube.com/@invoicematetech" },
     ],
 };
 
