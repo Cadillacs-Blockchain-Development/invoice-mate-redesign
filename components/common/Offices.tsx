@@ -5,11 +5,11 @@ import React from "react";
 const Offices = () => {
   return (
     <div className="mx-auto max-w-[1440px] pt-24">
-      <div className="flex flex-grow flex-col gap-8 lg:flex-row">
+      <div className="flex flex-grow flex-col gap-8 sm:flex-row">
         {officesData.map((data, i) => (
           <div
             key={data.location}
-            className={`max-w-[33%] grow ${inter.className}`}
+            className={`container grow sm:max-w-[33%] ${inter.className}`}
           >
             <div className="flex-1 text-center  text-xl font-semibold text-[#101828]">
               {data.location}
