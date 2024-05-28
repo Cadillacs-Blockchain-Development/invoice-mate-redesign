@@ -13,8 +13,8 @@ import Link from "next/link";
 import { inter } from "@/utils/fonts";
 import { ArrowRightCircle, ArrowUpRight } from "lucide-react";
 import { client } from "@/sanity/lib/client";
-import { getNewsPosts } from "@/sanity/lib/queries";
-import { HomeNewsPost } from "@/types";
+import { getHomeNewsPosts } from "@/sanity/lib/queries";
+import { HomePost } from "@/types";
 
 const newsCards = [
   {
@@ -35,7 +35,7 @@ const newsCards = [
 ];
 
 const News = async () => {
-  const news: HomeNewsPost[] = await getNewsPosts();
+  const news: HomePost[] = await getHomeNewsPosts();
   return (
     <div className={`mt-24 pb-16`}>
       <div className="container mx-auto sm:px-16">
@@ -65,7 +65,7 @@ const News = async () => {
                 <CardHeader className="p-0">
                   <Image
                     alt="Card background"
-                    src={news.mainImage.image}
+                    src={news?.mainImage?.image}
                     width={390}
                     height={220}
                   />

@@ -12,8 +12,6 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import news1 from "@/public/news1.jpg";
-import newsImg from "@/public/news/news_img.png";
 import {
   Pagination,
   PaginationContent,
@@ -29,6 +27,10 @@ import facebookIcon from "@/public/icons/facebook.svg";
 import twitterIcon from "@/public/icons/twitter.svg";
 import youtubeIcon from "@/public/icons/youtube.svg";
 import mediumIcon from "@/public/icons/medium.svg";
+import { Post } from "@/types";
+import { getBlogPosts } from "@/sanity/lib/queries";
+
+export const revalidate = 10;
 
 const Header = () => {
   return (
@@ -60,30 +62,39 @@ const Header = () => {
   );
 };
 
-const NewsCard = ({ index }: { index: number }) => {
+const NewsCard = ({
+  index,
+  blogDetails,
+}: {
+  index: number;
+  blogDetails: Post;
+}) => {
   return (
     <Card className="mt-4 flex max-w-[400px] flex-grow flex-col overflow-hidden shadow-xl">
       <CardHeader className="p-0">
-        <Image alt="Card background" src={news1} width={390} height={220} />
+        <Image
+          alt={blogDetails?.mainImage?.alt}
+          src={blogDetails?.mainImage?.image}
+          width={390}
+          height={220}
+        />
       </CardHeader>
       <CardContent className="relative mt-8 flex flex-grow items-start justify-between overflow-visible ">
         <div>
           <div
             className={`${inter.className} basis-[90%] text-2xl font-semibold text-[#101828]`}
           >
-            INVOICEMATE Q4-2023 ROUNDUP
+            {blogDetails.title}
           </div>
           <div className="text-[#667085] ">
-            In the latter part of 2023, InvoiceMate experienced a surge of
-            activities, continuing its tradition of dynamic engagement. The
-            fourth quarter proved to be particularly…
+            {blogDetails?.metadata?.description}
           </div>
         </div>
         <ArrowUpRight size={24} />
       </CardContent>
       <CardFooter>
         <Link
-          href={"/news"}
+          href={`/blogs/${blogDetails.slug}`}
           className="mt-4 text-[#9E2654] transition hover:underline"
         >
           Read More
@@ -92,11 +103,15 @@ const NewsCard = ({ index }: { index: number }) => {
     </Card>
   );
 };
-const NewsGrid = () => {
+const BlogGrid = ({ blogs }: { blogs: Post[] }) => {
   return (
     <div className=" container mx-auto mt-24 grid grid-cols-1 gap-8 border-b border-[#EAECF0] pb-16 sm:grid-cols-2 lg:grid-cols-3">
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_, i) => (
-        <NewsCard key={i} index={i} />
+      {blogs.map((blogDetails, i) => (
+        <NewsCard
+          key={`blog-page-card-${i}`}
+          index={i}
+          blogDetails={blogDetails}
+        />
       ))}
     </div>
   );
@@ -129,6 +144,18 @@ const PaginationComponent = () => {
 };
 
 const Information = () => {
+  const icons = [
+    {
+      link: "https://www.facebook.com/InvoiceMate-107177258098569",
+      icon: whatsappIcon,
+    },
+    {
+      link: "https://www.facebook.com/InvoiceMate-107177258098569",
+      icon: facebookIcon,
+    },
+    { link: "https://twitter.com/MateInvoice", icon: twitterIcon },
+    { link: "", icon: youtubeIcon },
+  ];
   return (
     <div className="container mx-auto ">
       <div className="my-24 flex flex-col items-center justify-center"></div>
@@ -141,13 +168,11 @@ const Information = () => {
         value to our customers by employing the latest technologies.
       </p>
       <div className="mt-16 flex items-center justify-center gap-8">
-        {[whatsappIcon, facebookIcon, twitterIcon, youtubeIcon].map(
-          (item, i) => (
-            <Link href={"/blogs"} key={`social-icon${i}`}>
-              <Image src={item} alt={`social-icon${i}`} />
-            </Link>
-          ),
-        )}
+        {icons.map((item, i) => (
+          <Link href={item.link} target="_blank" key={`social-icon${i}`}>
+            <Image src={item.icon} alt={`social-icon${i}`} />
+          </Link>
+        ))}
       </div>
       <div className="mt-16 flex justify-center">
         <Image src={mediumIcon} alt="medium-icon" />
@@ -155,11 +180,12 @@ const Information = () => {
     </div>
   );
 };
-const Blogs = () => {
+const Blogs = async () => {
+  const blogs: Post[] = await getBlogPosts();
   return (
     <div className="">
       <Header />
-      <NewsGrid />
+      <BlogGrid blogs={blogs} />
       <PaginationComponent />
       <Information />
       <Offices />

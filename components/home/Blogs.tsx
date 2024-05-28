@@ -1,37 +1,14 @@
 import React from "react";
-import blog1 from "@/public/blog1.jpg";
-import blog2 from "@/public/blog2.jpg";
-import blog3 from "@/public/blog3.jpg";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightCircle, ArrowUpRight } from "lucide-react";
 import { inter } from "@/utils/fonts";
+import { getHomeBlogPosts } from "@/sanity/lib/queries";
+import { HomePost } from "@/types";
 
-const blogCards = [
-  {
-    img: blog1,
-    title: "Financial Freedom with DeFi",
-    link: "https://www.invoicemate.net/financial-freedom-with-defi/",
-  },
-  {
-    img: blog2,
-    title: "The Basics of RWA Tokenization",
-    link: "https://www.invoicemate.net/the-basics-of-rwa-tokenization/",
-  },
-  {
-    img: blog3,
-    title: "The Basics of Revenue-Based Financing",
-    link: "https://www.invoicemate.net/the-basics-of-revenue-based-financing/",
-  },
-];
-
-const Blogs = () => {
+const Blogs = async () => {
+  const blogs: HomePost[] = await getHomeBlogPosts();
   return (
     <div className={`mt-24 pb-16`}>
       <div className=" container mx-auto sm:px-16">
@@ -52,10 +29,10 @@ const Blogs = () => {
           updated on the latest features. It will be interesting!
         </div>
         <div className="mt-16 grid grid-cols-1 place-items-stretch items-stretch justify-center gap-8 px-6 sm:px-0 lg:grid-cols-3">
-          {blogCards.map((card, i) => (
+          {blogs.map((card, i) => (
             <Link
-              key={card.title}
-              href={card.link}
+              key={`home-blog-card-${i}`}
+              href={`/blogs/${card.slug}`}
               target="_blank"
               className="mx-auto flex flex-col"
             >
@@ -63,7 +40,7 @@ const Blogs = () => {
                 <CardHeader className="p-0">
                   <Image
                     alt="Card background"
-                    src={card.img}
+                    src={card?.mainImage?.image}
                     width={390}
                     height={220}
                   />

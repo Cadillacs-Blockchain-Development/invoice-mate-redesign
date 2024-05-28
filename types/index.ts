@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type HomeNewsPost = {
+export type HomePost = {
     _id: string;
     _createdAt: string;
     title: string;
@@ -10,7 +10,7 @@ export type HomeNewsPost = {
     metadata: any;
     slug: string;
 };
-export type NewsPost = {
+export type Post = {
     _id: string;
     _createdAt: string;
     title: string;
