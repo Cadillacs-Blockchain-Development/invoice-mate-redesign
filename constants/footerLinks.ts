@@ -32,10 +32,10 @@
 const socialLinks = {
     heading: "Follow Us",
     links: [
-        { title: "LinkedIn", link: "" },
-        { title: "Twitter", link: "" },
-        { title: "Instagram", link: "" },
-        { title: "Facebook", link: "" },
+        { title: "LinkedIn", link: "https://www.linkedin.com/company/invoicemate" },
+        { title: "Twitter", link: "https://twitter.com/MateInvoice" },
+        { title: "Instagram", link: "https://www.instagram.com/invoicemate/" },
+        { title: "Facebook", link: "https://www.facebook.com/InvoiceMate-107177258098569" },
         { title: "YouTube", link: "" },
     ],
 };

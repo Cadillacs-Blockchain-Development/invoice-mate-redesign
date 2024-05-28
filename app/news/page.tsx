@@ -26,6 +26,8 @@ import Offices from "@/components/common/Offices";
 import { getNewsPosts } from "@/sanity/lib/queries";
 import { Post } from "@/types";
 
+export const revalidate = 10;
+
 const Header = () => {
   return (
     <div className="container mx-auto">
@@ -81,7 +83,7 @@ const NewsCard = ({
             {newsDetails.title}
           </div>
           <div className="text-[#667085] ">
-            {newsDetails.metadata.description}
+            {newsDetails?.metadata?.description}
           </div>
         </div>
         <ArrowUpRight size={24} />

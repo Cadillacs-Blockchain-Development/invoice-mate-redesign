@@ -11,7 +11,7 @@ type Props = {
   params: { slug: string };
 };
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 export async function generateMetadata(
   { params }: Props,

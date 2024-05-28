@@ -29,10 +29,10 @@ export const RichText = {
   ),
   block: {
     h1: ({ children }: any) => (
-      <h1 className="py-4 text-2xl font-bold text-[#5a2c66]">{children}</h1>
+      <h1 className="py-6 text-2xl font-bold text-[#5a2c66]">{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="py-4 text-2xl font-medium text-[#5a2c66]">{children}</h2>
+      <h2 className="py-6 text-2xl font-medium text-[#5a2c66]">{children}</h2>
     ),
     h3: ({ children }: any) => (
       <h3 className="py-4 text-center text-2xl font-bold ">{children}</h3>
@@ -41,7 +41,7 @@ export const RichText = {
       <h4 className="py-4 text-center text-2xl font-bold ">{children}</h4>
     ),
     normal: ({ children }: any) => (
-      <p className="mb-4 font-semibold">{children}</p>
+      <p className="my-4 font-semibold">{children}</p>
     ),
     blockquote: ({ children }: any) => (
       <blockquote className="my-5 border-l border-l-[#DFE1F4] py-5 pl-5 text-[19.2px] italic">

@@ -34,7 +34,9 @@ const Footer = () => {
                 </span>
                 <div className="mt-6 flex cursor-pointer flex-col gap-6 text-[#596780]">
                   {links.links.map((item, i) => (
-                    <div key={item.title}>{item.title}</div>
+                    <Link href={item.link} target="_blank" key={item.title}>
+                      {item.title}
+                    </Link>
                   ))}
                 </div>
               </div>

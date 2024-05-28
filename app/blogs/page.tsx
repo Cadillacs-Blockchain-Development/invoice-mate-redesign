@@ -12,8 +12,6 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import news1 from "@/public/news1.jpg";
-import newsImg from "@/public/news/news_img.png";
 import {
   Pagination,
   PaginationContent,
@@ -31,6 +29,8 @@ import youtubeIcon from "@/public/icons/youtube.svg";
 import mediumIcon from "@/public/icons/medium.svg";
 import { Post } from "@/types";
 import { getBlogPosts } from "@/sanity/lib/queries";
+
+export const revalidate = 10;
 
 const Header = () => {
   return (
@@ -144,6 +144,18 @@ const PaginationComponent = () => {
 };
 
 const Information = () => {
+  const icons = [
+    {
+      link: "https://www.facebook.com/InvoiceMate-107177258098569",
+      icon: whatsappIcon,
+    },
+    {
+      link: "https://www.facebook.com/InvoiceMate-107177258098569",
+      icon: facebookIcon,
+    },
+    { link: "https://twitter.com/MateInvoice", icon: twitterIcon },
+    { link: "", icon: youtubeIcon },
+  ];
   return (
     <div className="container mx-auto ">
       <div className="my-24 flex flex-col items-center justify-center"></div>
@@ -156,13 +168,11 @@ const Information = () => {
         value to our customers by employing the latest technologies.
       </p>
       <div className="mt-16 flex items-center justify-center gap-8">
-        {[whatsappIcon, facebookIcon, twitterIcon, youtubeIcon].map(
-          (item, i) => (
-            <Link href={"/blogs"} key={`social-icon${i}`}>
-              <Image src={item} alt={`social-icon${i}`} />
-            </Link>
-          ),
-        )}
+        {icons.map((item, i) => (
+          <Link href={item.link} target="_blank" key={`social-icon${i}`}>
+            <Image src={item.icon} alt={`social-icon${i}`} />
+          </Link>
+        ))}
       </div>
       <div className="mt-16 flex justify-center">
         <Image src={mediumIcon} alt="medium-icon" />
