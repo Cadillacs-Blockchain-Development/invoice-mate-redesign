@@ -12,7 +12,6 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import news1 from "@/public/news1.jpg";
 import newsImg from "@/public/news/news_img.png";
 import {
   Pagination,
@@ -24,6 +23,8 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import Offices from "@/components/common/Offices";
+import { getNewsPosts } from "@/sanity/lib/queries";
+import { Post } from "@/types";
 
 const Header = () => {
   return (
@@ -55,30 +56,39 @@ const Header = () => {
   );
 };
 
-const NewsCard = ({ index }: { index: number }) => {
+const NewsCard = ({
+  index,
+  newsDetails,
+}: {
+  index: number;
+  newsDetails: Post;
+}) => {
   return (
     <Card className="mt-4 flex max-w-[400px] flex-grow flex-col overflow-hidden shadow-xl">
       <CardHeader className="p-0">
-        <Image alt="Card background" src={news1} width={390} height={220} />
+        <Image
+          alt={newsDetails?.mainImage?.alt}
+          src={newsDetails?.mainImage?.image}
+          width={390}
+          height={220}
+        />
       </CardHeader>
       <CardContent className="relative mt-8 flex flex-grow items-start justify-between overflow-visible ">
         <div>
           <div
             className={`${inter.className} basis-[90%] text-2xl font-semibold text-[#101828]`}
           >
-            INVOICEMATE Q4-2023 ROUNDUP
+            {newsDetails.title}
           </div>
           <div className="text-[#667085] ">
-            In the latter part of 2023, InvoiceMate experienced a surge of
-            activities, continuing its tradition of dynamic engagement. The
-            fourth quarter proved to be particularly…
+            {newsDetails.metadata.description}
           </div>
         </div>
         <ArrowUpRight size={24} />
       </CardContent>
       <CardFooter>
         <Link
-          href={"/news"}
+          href={`/news/${newsDetails.slug}`}
           className="mt-4 text-[#9E2654] transition hover:underline"
         >
           Read More
@@ -87,11 +97,11 @@ const NewsCard = ({ index }: { index: number }) => {
     </Card>
   );
 };
-const NewsGrid = () => {
+const NewsGrid = ({ news }: { news: Post[] }) => {
   return (
     <div className=" container mx-auto mt-24 grid grid-cols-1 gap-8 border-b border-[#EAECF0] pb-16 sm:grid-cols-2 lg:grid-cols-3">
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_, i) => (
-        <NewsCard key={i} index={i} />
+      {news.map((newsDetails, i) => (
+        <NewsCard key={i} index={i} newsDetails={newsDetails} />
       ))}
     </div>
   );
@@ -154,11 +164,12 @@ const Information = () => {
     </div>
   );
 };
-const News = () => {
+const News = async () => {
+  const news: Post[] = await getNewsPosts();
   return (
     <div className="">
       <Header />
-      <NewsGrid />
+      <NewsGrid news={news} />
       <PaginationComponent />
       <Information />
       <Offices />

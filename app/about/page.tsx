@@ -38,7 +38,7 @@ const Stats = () => {
           <div className="hidden lg:block">
             <HighlightedHeading
               heading="We’re only just getting started on our journey"
-              vectorPos={{ right: 10 }}
+              vectorPos={{ right: -12, top: -40 }}
             />
           </div>
           <div className="block lg:hidden">
