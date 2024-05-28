@@ -11,3 +11,10 @@ const imageBuilder = createImageUrlBuilder({
 export const urlForImage = (source: Image) => {
   return imageBuilder?.image(source).auto('format').fit('max').url()
 }
+
+export function resolveOpenGraphImage(image: any, width = 1200, height = 627) {
+  if (!image) return;
+  const url = urlForImage(image)
+  if (!url) return;
+  return { url, alt: image?.alt as string, width, height };
+}

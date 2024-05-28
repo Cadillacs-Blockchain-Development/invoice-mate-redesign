@@ -11,7 +11,10 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { inter } from "@/utils/fonts";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRightCircle, ArrowUpRight } from "lucide-react";
+import { client } from "@/sanity/lib/client";
+import { getNewsPosts } from "@/sanity/lib/queries";
+import { HomeNewsPost } from "@/types";
 
 const newsCards = [
   {
@@ -31,28 +34,38 @@ const newsCards = [
   },
 ];
 
-const News = () => {
+const News = async () => {
+  const news: HomeNewsPost[] = await getNewsPosts();
   return (
     <div className={`mt-24 pb-16`}>
       <div className="container mx-auto sm:px-16">
         <h2 className="pt-10 text-center text-[32px] font-semibold text-[#040815]">
           News & Media
         </h2>
+        <Link
+          href={"/news"}
+          className="float-end mt-4 flex items-center gap-1 text-[#9E2654] transition hover:underline"
+        >
+          <span> View All</span>
+          <span>
+            <ArrowRightCircle />
+          </span>
+        </Link>
         <div className="mx-auto mt-3 px-10 text-center text-xl text-[#667085] lg:max-w-[66%] lg:px-0">
           Find out what&apos;s happening in and around InvoiceMate
         </div>
         <div className="mt-16 grid grid-cols-1 place-items-stretch items-stretch justify-center gap-8 px-6 sm:px-0 lg:grid-cols-3">
-          {newsCards.map((card, i) => (
+          {news.map((news, i) => (
             <Link
-              key={card.title}
-              href={"/news"}
+              key={news.title}
+              href={`/news/${news.slug}`}
               className="mx-auto flex flex-col"
             >
               <Card className="shadow-card-shadow mt-4 flex max-w-[400px] flex-grow flex-col overflow-hidden">
                 <CardHeader className="p-0">
                   <Image
                     alt="Card background"
-                    src={card.img}
+                    src={news.mainImage.image}
                     width={390}
                     height={220}
                   />
@@ -61,7 +74,7 @@ const News = () => {
                   <div
                     className={`${inter.className} basis-[90%] text-2xl font-semibold text-[#101828]`}
                   >
-                    {card.title}
+                    {news.title}
                   </div>
                   <ArrowUpRight size={24} />
                 </CardContent>

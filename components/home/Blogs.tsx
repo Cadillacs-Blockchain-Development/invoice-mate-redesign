@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRightCircle, ArrowUpRight } from "lucide-react";
 import { inter } from "@/utils/fonts";
 
 const blogCards = [
@@ -38,6 +38,15 @@ const Blogs = () => {
         <h2 className="pt-10 text-center text-[32px] font-semibold text-[#040815]">
           Blog
         </h2>
+        <Link
+          href={"/blogs"}
+          className="float-end mt-4 flex items-center gap-1 text-[#9E2654] transition hover:underline"
+        >
+          <span> View All</span>
+          <span>
+            <ArrowRightCircle />
+          </span>
+        </Link>
         <div className="mx-auto mt-3 px-10 text-center text-xl text-[#667085] lg:max-w-[66%] lg:px-0">
           Check more posts in the blog for more features. We will keep you
           updated on the latest features. It will be interesting!

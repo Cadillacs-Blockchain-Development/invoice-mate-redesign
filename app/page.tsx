@@ -18,6 +18,7 @@ import Backers from "@/components/common/Backers";
 import delloitLogo from "@/public/home/delloit_logo.svg";
 import award from "@/public/icons/award.svg";
 import heroImg from "@/public/home/hero_image.svg";
+import Link from "next/link";
 
 const Badge = ({
   icon,
@@ -65,8 +66,10 @@ const HeroPrimary = () => {
           className="absolute left-[-90%] top-[-110%] hidden sm:block"
         />
         <div className="mt-12 flex justify-center">
-          <Button className="rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97] ">
-            App coming soon
+          <Button className="rounded-full bg-[#040815] px-16 text-base font-semibold transition active:scale-[0.97] ">
+            <Link href={"https://app.invoicemate.net/"} target="_blank">
+              App
+            </Link>
           </Button>
         </div>
       </div>
@@ -179,8 +182,10 @@ const DecentralizedMoneySection = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Button className="rounded-full bg-[#040815] text-base font-semibold shadow-button-priamry transition active:scale-[0.97]">
-          App coming soon
+        <Button className="rounded-full bg-[#040815] px-16 text-base font-semibold shadow-button-priamry transition active:scale-[0.97]">
+          <Link href={"https://app.invoicemate.net/"} target="_blank">
+            App
+          </Link>
         </Button>
       </div>
     </div>
