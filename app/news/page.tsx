@@ -23,6 +23,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import Offices from "@/components/common/Offices";
 
 const Header = () => {
   return (
@@ -160,6 +161,7 @@ const News = () => {
       <NewsGrid />
       <PaginationComponent />
       <Information />
+      <Offices />
     </div>
   );
 };

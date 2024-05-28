@@ -69,7 +69,7 @@ const Navbar = () => {
                 {link.name}
                 <span
                   className={cn(
-                    "block h-0.5 max-w-0 transition-all duration-500 group-hover:max-w-full",
+                    "block h-0.5 max-w-0 overflow-hidden rounded-full transition-all duration-500 group-hover:max-w-full",
                     pathname === "/" || navBg
                       ? "bg-gradient-to-l from-white"
                       : "bg-gradient-to-l from-[#55122B]",
@@ -79,7 +79,7 @@ const Navbar = () => {
             ))}
           </ul>
           <div>
-            <Button className="rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97]">
+            <Button className="rounded-full bg-[#040815] px-16 text-base font-semibold transition active:scale-[0.97]">
               <Link href={"https://app.invoicemate.net/"} target="_blank">
                 App
               </Link>
@@ -129,7 +129,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div>
-              <Button className="mx-auto mt-8 rounded-full bg-[#040815] text-base font-semibold transition active:scale-[0.97]">
+              <Button className="mx-auto mt-8 rounded-full bg-[#040815] px-16 text-base font-semibold transition active:scale-[0.97]">
                 <Link href={"https://app.invoicemate.net/"} target="_blank">
                   App
                 </Link>
