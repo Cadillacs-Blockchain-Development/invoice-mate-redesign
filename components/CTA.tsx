@@ -20,8 +20,8 @@ const CTA = () => {
               Instruments via Know Your Invoice (KYI)
             </div>
             <Button className="mt-6 rounded-full bg-white px-16 text-center text-base  font-semibold text-[#8F1F48] transition hover:bg-white/80 active:scale-[0.97]">
-              <Link href={"https://app.invoicemate.net/"} target="_blank">
-                App
+              <Link href={"https://t.me/InvoiceMate_Official"} target="_blank">
+                Join Community
               </Link>
             </Button>
           </div>

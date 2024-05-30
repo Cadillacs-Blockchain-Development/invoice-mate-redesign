@@ -81,7 +81,7 @@ const Navbar = () => {
           <div>
             <Button className="rounded-full bg-[#040815] px-6 text-base font-semibold transition active:scale-[0.97]">
               <Link href={"https://t.me/InvoiceMate_Official"} target="_blank">
-                Join Comminuty
+              Join Community
               </Link>
             </Button>
           </div>
@@ -134,7 +134,7 @@ const Navbar = () => {
                   href={"https://t.me/InvoiceMate_Official"}
                   target="_blank"
                 >
-                  Join Comminuty
+                  Join Community
                 </Link>
               </Button>
             </div>

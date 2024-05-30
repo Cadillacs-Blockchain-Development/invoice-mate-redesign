@@ -67,8 +67,8 @@ const HeroPrimary = () => {
         />
         <div className="mt-12 flex justify-center">
           <Button className="rounded-full bg-[#040815] px-16 text-base font-semibold transition active:scale-[0.97] ">
-            <Link href={"https://app.invoicemate.net/"} target="_blank">
-              App
+            <Link href={"https://t.me/InvoiceMate_Official"} target="_blank">
+              Join Community
             </Link>
           </Button>
         </div>
@@ -183,8 +183,8 @@ const DecentralizedMoneySection = () => {
       </div>
       <div className="flex justify-center">
         <Button className="rounded-full bg-[#040815] px-16 text-base font-semibold shadow-button-priamry transition active:scale-[0.97]">
-          <Link href={"https://app.invoicemate.net/"} target="_blank">
-            App
+          <Link href={"https://t.me/InvoiceMate_Official"} target="_blank">
+            Join Community
           </Link>
         </Button>
       </div>
