@@ -95,3 +95,43 @@ export async function getSingleBlogPost(slug: string) {
     { slug },
   );
 }
+
+/**
+ * The function `getPartnerLogos` fetches partner logos data including images from sanity.
+ * @returns The `getPartnerLogos` function is returning an object that contains an array of partner
+ * logos data. Each partner logo object in the array includes the `_key`, `heading`, and an array of
+ * image URLs for that partner.
+ */
+export async function getPartnerLogos() {
+  const result = await client.fetch(
+    groq`*[_type == "partnerLogos"] [0] {
+      partners[] {
+        _key,
+        heading,
+        "images": images[].asset->url
+      },
+      backers[] {
+        "image": asset->url
+      }
+    }`)
+
+  return result;
+}
+
+/**
+ * This  function fetches statistics related to assets financed, assets tokenized, and bad
+ * debts from sanity.
+ * @returns The `getStats` function is returning an object with statistics related to assets financed,
+ * assets tokenized, and bad debts. The data is fetched from a client using a GROQ query and the
+ * function is returning the result of this query.
+ */
+export async function getStats() {
+  const result = await client.fetch(
+    groq`*[_type == "stats"] [0] {
+    assetsFinanced,
+    assetsTokenized,
+    badDebts,
+    }`)
+
+  return result;
+}

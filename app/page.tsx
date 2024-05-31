@@ -11,7 +11,7 @@ import { requestToBorrowCardsData } from "@/constants/requestToBorrowCardsData";
 import { inter } from "@/utils/fonts";
 import RequestForm from "@/components/home/RequestForm";
 import PartnersComponent from "@/components/home/PartnersComponent";
-import { partners } from "@/constants/partners/partners";
+// import { partners } from "@/constants/partners/partners";
 import Blogs from "@/components/home/Blogs";
 import News from "@/components/home/News";
 import Backers from "@/components/common/Backers";
@@ -19,6 +19,8 @@ import delloitLogo from "@/public/home/delloit_logo.svg";
 import award from "@/public/icons/award.svg";
 import heroImg from "@/public/home/hero_image.svg";
 import Link from "next/link";
+import { getPartnerLogos, getStats } from "@/sanity/lib/queries";
+import { PartnerLogos, Stats } from "@/types";
 
 const Badge = ({
   icon,
@@ -112,14 +114,14 @@ const HeroSecondary = () => {
   );
 };
 
-const StatsSection = () => {
+const StatsSection = ({ stats }: { stats: Stats }) => {
   return (
     <div className="rounded-t-2xl bg-white px-10  pt-8 xl:px-[120px]">
       <div className="container relative mx-auto">
         <div className="flex w-full flex-col items-center justify-between sm:flex-row">
           <div className="flex flex-col items-center justify-between">
             <span className="text-[32px] font-bold text-[#58142D] ">
-              $201,983,748
+              {stats.assetsTokenized}
             </span>
             <span className="text-base font-medium text-[#58142D]">
               Assets Tokenized
@@ -127,14 +129,16 @@ const StatsSection = () => {
           </div>
           <div className="flex flex-col items-center justify-between">
             <span className="text-[32px] font-bold text-[#58142D] ">
-              $6,192,129
+              {stats.assetsFinanced}
             </span>
             <span className="text-base font-medium text-[#58142D] ">
               Assets Financed
             </span>
           </div>
           <div className="flex flex-col items-center justify-between">
-            <span className="text-[32px] font-bold text-[#58142D] ">$0</span>
+            <span className="text-[32px] font-bold text-[#58142D] ">
+              {stats.badDebts}
+            </span>
             <span className="text-base font-medium text-[#58142D] ">
               Bad Debts
             </span>
@@ -231,24 +235,27 @@ const RequestToBorrow = () => {
     </div>
   );
 };
-export default function Home() {
+export default async function Home() {
+  const partnersLogos: PartnerLogos = await getPartnerLogos();
+  const stats: Stats = await getStats();
+  // console.log(partnersLogos);
   return (
     <main className="bg-[#55122B] ">
       <HeroPrimary />
       <HeroSecondary />
       <div className="bg-white">
-        <StatsSection />
-        <Backers />
+        <StatsSection stats={stats} />
+        <Backers backers={partnersLogos.backers} />
         <VideoSection />
         <DecentralizedInfrastructureSection />
         <DecentralizedMoneySection />
         <RequestToBorrow />
         <div className="mt-24 bg-[#F9FAFC]">
-          {partners.map((item, i) => (
+          {partnersLogos.partners.map((item: any, i: any) => (
             <PartnersComponent
-              title={item.title}
-              partners={item.partners}
-              key={item.title}
+              title={item.heading}
+              partners={item.images}
+              key={item.heading}
             />
           ))}
         </div>
