@@ -23,3 +23,21 @@ export type Post = {
         name: string;
     }
 };
+export interface Partner {
+    _key: string;
+    heading: string;
+    images: string[];
+}
+
+export interface PartnerLogos {
+    partners: Partner[];
+    backers: {
+        image: string;
+    }[];
+}
+
+export type Stats = {
+    assetsTokenized: string;
+    assetsFinanced: string;
+    badDebts: string;
+};
