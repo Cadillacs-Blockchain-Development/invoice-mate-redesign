@@ -121,7 +121,7 @@ const StatsSection = ({ stats }: { stats: Stats }) => {
         <div className="flex w-full flex-col items-center justify-between sm:flex-row">
           <div className="flex flex-col items-center justify-between">
             <span className="text-[32px] font-bold text-[#58142D] ">
-              {stats.assetsTokenized}
+              {stats?.assetsTokenized}
             </span>
             <span className="text-base font-medium text-[#58142D]">
               Assets Tokenized
@@ -129,7 +129,7 @@ const StatsSection = ({ stats }: { stats: Stats }) => {
           </div>
           <div className="flex flex-col items-center justify-between">
             <span className="text-[32px] font-bold text-[#58142D] ">
-              {stats.assetsFinanced}
+              {stats?.assetsFinanced}
             </span>
             <span className="text-base font-medium text-[#58142D] ">
               Assets Financed
@@ -137,7 +137,7 @@ const StatsSection = ({ stats }: { stats: Stats }) => {
           </div>
           <div className="flex flex-col items-center justify-between">
             <span className="text-[32px] font-bold text-[#58142D] ">
-              {stats.badDebts}
+              {stats?.badDebts}
             </span>
             <span className="text-base font-medium text-[#58142D] ">
               Bad Debts
@@ -245,13 +245,13 @@ export default async function Home() {
       <HeroSecondary />
       <div className="bg-white">
         <StatsSection stats={stats} />
-        <Backers backers={partnersLogos.backers} />
+        <Backers backers={partnersLogos?.backers} />
         <VideoSection />
         <DecentralizedInfrastructureSection />
         <DecentralizedMoneySection />
         <RequestToBorrow />
         <div className="mt-24 bg-[#F9FAFC]">
-          {partnersLogos.partners.map((item: any, i: any) => (
+          {partnersLogos?.partners?.map((item: any, i: any) => (
             <PartnersComponent
               title={item.heading}
               partners={item.images}

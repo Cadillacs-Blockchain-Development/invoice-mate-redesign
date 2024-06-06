@@ -16,7 +16,7 @@ const Backers = ({
       </div>
       <div className="mt-8 flex justify-center gap-8">
         <Marquee autoFill>
-          {backers.map((item, i) => (
+          {backers?.map((item, i) => (
             <Image
               src={item.image}
               alt="backer"
