@@ -139,11 +139,19 @@ const MeetTheTeam = () => {
 };
 
 const About = () => {
+
+  type Backer ={
+    image: string;
+  };
+  
+  const data: Backer[] = [] 
+  
+
   return (
     <div className="">
       <Heading />
       <Stats />
-      <Backers />
+      <Backers backers={data}  />
       <MeetTheTeam />
       <Offices />
     </div>
@@ -151,3 +159,4 @@ const About = () => {
 };
 
 export default About;
+
