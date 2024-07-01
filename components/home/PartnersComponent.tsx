@@ -25,10 +25,7 @@ const PartnersComponent = ({
               fill
               className={cn(
                 "max-w-[100px] sm:max-w-[120px]",
-                title ===
-                  "Accessing 53K + Businesses through our B2B Partners" &&
-                  i === 6 &&
-                  "object-[1px_0] invert",
+                title === "Accessing 53K + Businesses through our B2B Partners",
               )}
             />
           </div>
