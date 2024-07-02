@@ -16,6 +16,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
 import Link from "next/link";
+import emailjs from "@emailjs/browser"
+import { emailConfig } from "@/utils/emailJs";
+import { Toaster, toast } from 'sonner';
 
 const formSchema = z.object({
   fName: z.string(),
@@ -26,16 +29,40 @@ const formSchema = z.object({
 });
 
 const RequestForm = () => {
+  
+    
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {},
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    console.log(values);
+     const {serviceId,templateId,publicKey} = emailConfig()
+      emailjs.send(serviceId,templateId,values,publicKey).then(
+      (response) => {
+         toast.success(`🎉 Form submitted successfully! Thank you, ${values.fName}.`, {
+          position: "top-right"
+        });
+        form.reset({
+          fName: "",
+          lName: "",
+          email: "",
+          loanAmt: "",
+          message: "",
+        })
+      },
+      (error) => {
+        toast.error('🚨 There was an error submitting the form.', {
+          position: "top-right"
+        });
+      },
+    )
   }
+
+  
   return (
+    <>
+    <Toaster/>
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
@@ -61,7 +88,7 @@ const RequestForm = () => {
             <FormItem>
               <FormLabel>Last Name</FormLabel>
               <FormControl className="rounded-full">
-                <Input placeholder="Last Name" {...field} />
+                <Input placeholder="Last Name" {...field}  />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -74,7 +101,7 @@ const RequestForm = () => {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl className="rounded-full">
-                <Input placeholder="Email" {...field} />
+                <Input placeholder="Email" {...field}  />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -87,7 +114,7 @@ const RequestForm = () => {
             <FormItem>
               <FormLabel>Loan Amount</FormLabel>
               <FormControl className="rounded-full">
-                <Input placeholder="Loan Amount" {...field} />
+                <Input placeholder="Loan Amount" {...field}  />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,7 +127,7 @@ const RequestForm = () => {
             <FormItem className="col-span-2">
               <FormLabel>Message</FormLabel>
               <FormControl className="rounded-[30px]">
-                <Textarea {...field} rows={8} />
+                <Textarea {...field} rows={8}  />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -127,6 +154,7 @@ const RequestForm = () => {
         </Button>
       </form>
     </Form>
+    </>
   );
 };
 
