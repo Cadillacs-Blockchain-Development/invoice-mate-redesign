@@ -20,7 +20,7 @@ import businesslImg1 from "@/public/partners/business/Food_Panda.png";
 import businesslImg3 from "@/public/partners/business/Mentor_Health.png";
 import businesslImg6 from "@/public/partners/business/Snap_Retail.png";
 import businesslImg10 from "@/public/partners/business/Umrah_Companions.png";
-import businesslImg12 from "@/public/partners/business/cadillacsLogo.svg";
+import businesslImg12 from "@/public/partners/business/cadillacs-logo.png";
 
 
 import bloomberg from "@/public/partners/featured/bloomberg.svg";
